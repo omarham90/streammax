@@ -1,486 +1,122 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STREAMMAX WORLDWIDE | Premium Ultra HD 4K Streaming Platform</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Plus+Jakarta+Sans:wght@400;600;800&family=Tajawal:wght@500;700;900&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-obsidian: #08070d;
-            --surface-card: #13111c;
-            --surface-border: #262238;
-            --accent-purple: #8b5cf6;
-            --purple-glow: rgba(139, 92, 246, 0.35);
-            --accent-amber: #f59e0b;
-            --amber-glow: rgba(245, 158, 11, 0.35);
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
-            --whatsapp-green: #22c55e;
-            --font-title: 'Cinzel', serif;
-            --font-body: 'Plus Jakarta Sans', sans-serif;
-            --font-arabic: 'Tajawal', sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STREAMMAX | VIP 4K Ultra HD Streaming</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+    body { background-color: #0b0c10; color: #ffffff; line-height: 1.6; text-align: center; padding: 20px 15px; }
+    
+    /* Header & Selectors */
+    .header { display: flex; justify-content: space-between; align-items: center; max-width: 600px; margin: 0 auto 20px auto; }
+    .brand { font-size: 24px; font-weight: 800; letter-spacing: 2px; color: #fff; }
+    .brand span { color: #f39c12; }
+    .select-box { background: #1f2833; color: #fff; border: 1px solid #333; padding: 6px 10px; border-radius: 6px; font-size: 13px; }
 
-        [dir="rtl"] {
-            --font-body: 'Tajawal', sans-serif;
-        }
+    /* Hero Section */
+    .badge { display: inline-block; background: rgba(243, 156, 18, 0.15); color: #f39c12; border: 1px solid #f39c12; padding: 6px 16px; border-radius: 20px; font-weight: bold; font-size: 12px; margin-bottom: 12px; text-transform: uppercase; }
+    h1 { font-size: 26px; font-weight: 800; margin-bottom: 10px; line-height: 1.2; }
+    h1 span { color: #f39c12; }
+    p.description { color: #c5c6c7; font-size: 14px; max-width: 500px; margin: 0 auto 20px auto; }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    /* Media & Preview Card */
+    .media-card { background: #1f2833; border: 1px solid #333; border-radius: 14px; padding: 15px; max-width: 500px; margin: 0 auto 20px auto; box-shadow: 0 10px 30px rgba(0,0,0,0.5); text-align: left; }
+    .video-container { position: relative; border-radius: 10px; overflow: hidden; background: #000; margin-bottom: 15px; aspect-ratio: 16/9; }
+    .video-container video { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .live-badge { position: absolute; top: 10px; left: 10px; background: #e74c3c; color: #fff; padding: 3px 8px; font-size: 11px; font-weight: bold; border-radius: 4px; text-transform: uppercase; letter-spacing: 1px; }
+    .stream-title { position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,0.75); color: #f39c12; padding: 4px 10px; font-size: 12px; font-weight: bold; border-radius: 4px; font-family: monospace; }
 
-        body {
-            background-color: var(--bg-obsidian);
-            color: var(--text-main);
-            font-family: var(--font-body);
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
+    /* Sections & Grids */
+    .section-title { font-size: 13px; color: #66fcf1; margin: 15px 0 8px 0; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+    .vod-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .vod-item { position: relative; border-radius: 8px; overflow: hidden; border: 1px solid #333; background: #000; }
+    .vod-grid img { width: 100%; height: 110px; object-fit: cover; display: block; }
+    .vod-label { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.8); font-size: 10px; padding: 3px; color: #fff; text-align: center; }
 
-        /* Control Bar */
-        .controls-bar {
-            background: rgba(19, 17, 28, 0.85);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--surface-border);
-            padding: 12px 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .brand-title {
-            font-family: var(--font-title);
-            font-size: 1.4rem;
-            letter-spacing: 2px;
-            color: #fff;
-            text-transform: uppercase;
-        }
-
-        .brand-title span {
-            color: var(--accent-amber);
-        }
-
-        .selector-group {
-            display: flex;
-            gap: 12px;
-        }
-
-        select {
-            background: #1a1726;
-            color: #fff;
-            border: 1px solid var(--surface-border);
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            outline: none;
-        }
-
-        /* Hero Container */
-        .hero-section {
-            padding: 60px 24px;
-            text-align: center;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .badge {
-            background: rgba(245, 158, 11, 0.1);
-            color: var(--accent-amber);
-            border: 1px solid var(--accent-amber);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-
-        h1 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 20px;
-        }
-
-        h1 span {
-            background: linear-gradient(135deg, var(--accent-purple), var(--accent-amber));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        p.hero-sub {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-        }
-
-        /* Interactive Stream Player Canvas */
-        .player-wrapper {
-            background: var(--surface-card);
-            border: 1px solid var(--surface-border);
-            border-radius: 16px;
-            padding: 20px;
-            max-width: 800px;
-            margin: 0 auto 50px auto;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        .player-screen {
-            background: #000;
-            border-radius: 8px;
-            height: 280px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(139, 92, 246, 0.2);
-        }
-
-        .equalizer-wave {
-            display: flex;
-            align-items: flex-end;
-            gap: 6px;
-            height: 60px;
-            margin-bottom: 20px;
-        }
-
-        .bar {
-            width: 8px;
-            background: linear-gradient(to top, var(--accent-purple), var(--accent-amber));
-            border-radius: 4px;
-            animation: bounce 1.2s infinite ease-in-out alternate;
-        }
-
-        .bar:nth-child(2) { animation-delay: 0.2s; }
-        .bar:nth-child(3) { animation-delay: 0.4s; }
-        .bar:nth-child(4) { animation-delay: 0.1s; }
-        .bar:nth-child(5) { animation-delay: 0.5s; }
-
-        @keyframes bounce {
-            0% { height: 15px; }
-            100% { height: 55px; }
-        }
-
-        .stream-meta {
-            font-family: monospace;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        .stream-meta span {
-            color: var(--accent-amber);
-            font-weight: bold;
-        }
-
-        .channel-selector {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-            margin-top: 15px;
-            flex-wrap: wrap;
-        }
-
-        .ch-btn {
-            background: #1a1726;
-            border: 1px solid var(--surface-border);
-            color: var(--text-main);
-            padding: 8px 16px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.2s;
-        }
-
-        .ch-btn.active, .ch-btn:hover {
-            border-color: var(--accent-purple);
-            background: var(--accent-purple);
-            color: #fff;
-        }
-
-        /* Pricing Cards */
-        .pricing-section {
-            padding: 40px 24px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: var(--surface-card);
-            border: 1px solid var(--surface-border);
-            border-radius: 16px;
-            padding: 30px 20px;
-            text-align: center;
-            position: relative;
-            transition: transform 0.3s;
-        }
-
-        .card.popular {
-            border-color: var(--accent-amber);
-            box-shadow: 0 0 25px var(--amber-glow);
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .plan-title {
-            font-size: 1.2rem;
-            font-weight: 800;
-            margin-bottom: 10px;
-        }
-
-        .price-display {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: #fff;
-            margin: 15px 0;
-        }
-
-        .features-list {
-            list-style: none;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 25px;
-            text-align: left;
-        }
-
-        [dir="rtl"] .features-list {
-            text-align: right;
-        }
-
-        .features-list li {
-            margin-bottom: 8px;
-        }
-
-        .cta-button {
-            display: block;
-            width: 100%;
-            padding: 12px;
-            border-radius: 8px;
-            background: var(--accent-purple);
-            color: #fff;
-            text-decoration: none;
-            font-weight: 800;
-            text-transform: uppercase;
-            border: none;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .cta-button.popular-btn {
-            background: var(--accent-amber);
-            color: #000;
-        }
-
-        .cta-button:hover {
-            filter: brightness(1.1);
-        }
-
-        /* Speed Test Block */
-        .speed-box {
-            background: var(--surface-card);
-            border: 1px solid var(--surface-border);
-            border-radius: 16px;
-            padding: 30px;
-            max-width: 600px;
-            margin: 40px auto;
-            text-align: center;
-        }
-
-        /* Footer */
-        footer {
-            border-top: 1px solid var(--surface-border);
-            padding: 30px;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
-        @media (max-width: 600px) {
-            h1 { font-size: 2rem; }
-            .controls-bar { flex-direction: column; gap: 10px; }
-        }
-    </style>
+    /* Action Buttons */
+    .btn-container { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+    .btn { display: block; width: 100%; padding: 15px; border-radius: 10px; font-weight: bold; font-size: 15px; text-decoration: none; text-align: center; transition: all 0.2s; }
+    .btn-primary { background: #25d366; color: #fff; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
+    .btn-secondary { background: transparent; color: #fff; border: 1px solid #45f32d; }
+  </style>
 </head>
 <body>
 
-    <div class="controls-bar">
-        <div class="brand-title">STREAM<span>MAX</span></div>
-        <div class="selector-group">
-            <select id="currencySelect" onchange="updatePrices()">
-                <option value="GBP">GBP (£)</option>
-                <option value="MAD">MAD (د.م.)</option>
-                <option value="SAR">SAR (ر.س)</option>
-                <option value="USD">USD ($)</option>
-            </select>
-            <select id="langSelect" onchange="toggleLanguage()">
-                <option value="en">English</option>
-                <option value="ar">العربية</option>
-            </select>
-        </div>
+  <!-- Header -->
+  <div class="header">
+    <div class="brand">STREAM<span>MAX</span></div>
+    <div>
+      <select class="select-box">
+        <option>GBP (£)</option>
+        <option>USD ($)</option>
+        <option>EUR (€)</option>
+      </select>
+      <select class="select-box">
+        <option>English</option>
+        <option>العربية</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Hero Title -->
+  <div class="badge">VIP ULTRA HD STREAMING</div>
+  <h1>Zero Buffering.<br><span>18,000+ Live Channels</span> & 4K VOD</h1>
+  <p class="description">Stream live Premier League football, Champions League matches, Arabic VIP networks, and latest blockbusters in crystal-clear 4K.</p>
+
+  <!-- Live Video Preview & Galleries -->
+  <div class="media-card">
+    
+    <!-- Video Player Preview -->
+    <div class="video-container">
+      <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80">
+        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4" type="video/mp4">
+      </video>
+      <div class="live-badge">● LIVE 4K</div>
+      <div class="stream-title">STREAMING: beIN Sports 1 Premium 4K</div>
     </div>
 
-    <section class="hero-section">
-        <span class="badge" id="heroBadge">VIP Ultra HD Streaming</span>
-        <h1 id="heroHeading">Zero Buffering. <span>18,000+ Live Channels</span> & 4K VOD</h1>
-        <p class="hero-sub" id="heroSub">Enjoy Premier League, Champions League, Arabic VIP Networks, and latest Cinema Movies on any Smart TV, Firestick, or Smartphone.</p>
+    <!-- Live Football Screening Highlights -->
+    <div class="section-title">⚽ Latest Live Football Screenings</div>
+    <div class="vod-grid">
+      <div class="vod-item">
+        <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=300&q=80" alt="Premier League">
+        <div class="vod-label">Premier League</div>
+      </div>
+      <div class="vod-item">
+        <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=300&q=80" alt="Champions League">
+        <div class="vod-label">UEFA Champions</div>
+      </div>
+      <div class="vod-item">
+        <img src="https://images.unsplash.com/photo-1518091043644-c1d4457512c6?auto=format&fit=crop&w=300&q=80" alt="Arabic VIP Sports">
+        <div class="vod-label">beIN Sports VIP</div>
+      </div>
+    </div>
 
-        <!-- Player Visualizer -->
-        <div class="player-wrapper">
-            <div class="player-screen">
-                <div class="equalizer-wave">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </div>
-                <div class="stream-meta" id="streamStatus">STREAMING: <span id="currentCh">beIN Sports 1 Premium 4K</span></div>
-                <div class="stream-meta">STATUS: <span style="color:var(--whatsapp-green);">ONLINE • 60 FPS • 18.4 Mbps</span></div>
-            </div>
-            <div class="channel-selector">
-                <button class="ch-btn active" onclick="switchChannel('beIN Sports 1 Premium 4K')">beIN Sports</button>
-                <button class="ch-btn" onclick="switchChannel('Sky Sports Main Event UHD')">Sky Sports</button>
-                <button class="ch-btn" onclick="switchChannel('MBC VIP Drama HD')">MBC VIP</button>
-                <button class="ch-btn" onclick="switchChannel('Canal+ France 4K')">Canal+</button>
-            </div>
-        </div>
-    </section>
+    <!-- Latest Movies & Series VOD -->
+    <div class="section-title">🎬 Latest 4K Movies & Series VOD</div>
+    <div class="vod-grid">
+      <div class="vod-item">
+        <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=300&q=80" alt="Blockbuster Movies">
+        <div class="vod-label">Latest Movies</div>
+      </div>
+      <div class="vod-item">
+        <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=300&q=80" alt="Trending TV Series">
+        <div class="vod-label">Netflix / HBO Series</div>
+      </div>
+      <div class="vod-item">
+        <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=300&q=80" alt="Action Cinema">
+        <div class="vod-label">Ultra HD Releases</div>
+      </div>
+    </div>
 
-    <!-- Pricing Section -->
-    <section class="pricing-section">
-        <div class="pricing-grid">
-            
-            <div class="card">
-                <div class="plan-title" id="p1Title">1 Month Pass</div>
-                <div class="price-display" id="p1Price">£9.99</div>
-                <ul class="features-list">
-                    <li>✔ 18,000+ Channels</li>
-                    <li>✔ Full Sports & VOD</li>
-                    <li>✔ 4K / Full HD Quality</li>
-                    <li>✔ 24/7 WhatsApp Support</li>
-                </ul>
-                <a href="#" class="cta-button" onclick="sendWhatsApp('1 Month')">Subscribe Now</a>
-            </div>
+  </div>
 
-            <div class="card">
-                <div class="plan-title" id="p3Title">3 Months Pass</div>
-                <div class="price-display" id="p3Price">£24.99</div>
-                <ul class="features-list">
-                    <li>✔ 18,000+ Channels</li>
-                    <li>✔ Full Sports & VOD</li>
-                    <li>✔ Anti-Freeze Backup</li>
-                    <li>✔ Fast Server Setup</li>
-                </ul>
-                <a href="#" class="cta-button" onclick="sendWhatsApp('3 Months')">Subscribe Now</a>
-            </div>
+  <!-- Action Buttons -->
+  <div class="btn-container">
+    <a href="https://wa.me/447717095439?text=Hello!%20I%20want%20to%20request%20a%20FREE%2024h%20Trial%20for%20StreamMax." class="btn btn-primary">🚀 Request Free 24h Trial</a>
+    <a href="https://wa.me/447717095439?text=Hello!%20I%20want%20to%20subscribe%20to%20a%20VIP%20Plan%20on%20StreamMax." class="btn btn-secondary">💳 Buy VIP Subscription</a>
+  </div>
 
-            <div class="card popular">
-                <span class="badge" style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%);">Best Value</span>
-                <div class="plan-title" id="p12Title">12 Months VIP</div>
-                <div class="price-display" id="p12Price">£59.99</div>
-                <ul class="features-list">
-                    <li>✔ All Ultra HD Channels</li>
-                    <li>✔ 40,000+ Movies & Series</li>
-                    <li>✔ Anti-Freeze Technology</li>
-                    <li>✔ VIP Speed Priority</li>
-                </ul>
-                <a href="#" class="cta-button popular-btn" onclick="sendWhatsApp('12 Months VIP')">Subscribe Now</a>
-            </div>
-
-        </div>
-
-        <!-- Free Trial CTA -->
-        <div class="speed-box">
-            <h3 id="trialHeading" style="margin-bottom: 10px;">Want to test quality before paying?</h3>
-            <p style="color:var(--text-muted); margin-bottom: 20px;" id="trialSub">Get a 24-hour instant test account configured directly for your device.</p>
-            <button class="cta-button" style="background:var(--whatsapp-green);" onclick="sendWhatsApp('24-Hour Free Trial')">Request Free 24h Trial</button>
-        </div>
-    </section>
-
-    <footer>
-        &copy; 2026 STREAMMAX WORLDWIDE. All Rights Reserved. Ultra Low Latency Streaming Engine.
-    </footer>
-
-    <script>
-        const phone = "447717095439";
-
-        const priceData = {
-            GBP: { p1: "£9.99", p3: "£24.99", p12: "£59.99" },
-            MAD: { p1: "100 MAD", p3: "250 MAD", p12: "600 MAD" },
-            SAR: { p1: "45 SAR", p3: "115 SAR", p12: "280 SAR" },
-            USD: { p1: "$12.99", p3: "$29.99", p12: "$74.99" }
-        };
-
-        function updatePrices() {
-            const curr = document.getElementById('currencySelect').value;
-            document.getElementById('p1Price').innerText = priceData[curr].p1;
-            document.getElementById('p3Price').innerText = priceData[curr].p3;
-            document.getElementById('p12Price').innerText = priceData[curr].p12;
-        }
-
-        function switchChannel(name) {
-            document.getElementById('currentCh').innerText = name;
-            const btns = document.querySelectorAll('.ch-btn');
-            btns.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-        }
-
-        function sendWhatsApp(plan) {
-            const curr = document.getElementById('currencySelect').value;
-            const lang = document.getElementById('langSelect').value;
-            let msg = "";
-            
-            if(lang === 'ar') {
-                msg = `مرحباً، أود الاشتراك في باقة STREAMMAX: (${plan}) - العملة: ${curr}. يرجى تزويدي بالتفاصيل.`;
-            } else {
-                msg = `Hello STREAMMAX! I would like to order the plan: (${plan}) - Currency: ${curr}. Please send payment details.`;
-            }
-            
-            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
-        }
-
-        function toggleLanguage() {
-            const lang = document.getElementById('langSelect').value;
-            if(lang === 'ar') {
-                document.documentElement.setAttribute('dir', 'rtl');
-                document.getElementById('heroBadge').innerText = 'البث المباشر عالي الدقة VIP';
-                document.getElementById('heroHeading').innerHTML = 'بدون تقطيع. <span>أكثر من 18,000 قناة</span> ومكتبة أفلام 4K';
-                document.getElementById('heroSub').innerText = 'استمتع بمشاهدة الدوري الإنجليزي، دوري الأبطال، القنوات العربية والعالمية على شاشتك الذكية أو الهاتف.';
-                document.getElementById('p1Title').innerText = 'اشتراك 1 شهر';
-                document.getElementById('p3Title').innerText = 'اشتراك 3 أشهر';
-                document.getElementById('p12Title').innerText = 'اشتراك 12 شهر VIP';
-                document.getElementById('trialHeading').innerText = 'هل تريد تجربة الجودة قبل الاشتراك؟';
-                document.getElementById('trialSub').innerText = 'احصل على حساب تجريبي مجاني لمدة 24 ساعة يعمل على جميع الأجهزة.';
-            } else {
-                document.documentElement.setAttribute('dir', 'ltr');
-                document.getElementById('heroBadge').innerText = 'VIP Ultra HD Streaming';
-                document.getElementById('heroHeading').innerHTML = 'Zero Buffering. <span>18,000+ Live Channels</span> & 4K VOD';
-                document.getElementById('heroSub').innerText = 'Enjoy Premier League, Champions League, Arabic VIP Networks, and latest Cinema Movies on any Smart TV, Firestick, or Smartphone.';
-                document.getElementById('p1Title').innerText = '1 Month Pass';
-                document.getElementById('p3Title').innerText = '3 Months Pass';
-                document.getElementById('p12Title').innerText = '12 Months VIP';
-                document.getElementById('trialHeading').innerText = 'Want to test quality before paying?';
-                document.getElementById('trialSub').innerText = 'Get a 24-hour instant test account configured directly for your device.';
-            }
-        }
-    </script>
 </body>
 </html>
