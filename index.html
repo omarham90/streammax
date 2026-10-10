@@ -24,4 +24,132 @@
     .header { display: flex; justify-content: space-between; align-items: center; max-width: 520px; margin: 0 auto 30px auto; }
     .brand { font-size: 24px; font-weight: 800; color: #fff; letter-spacing: 2px; }
     .brand span { color: #f39c12; }
-    .select-box { background: #1a1d2
+    .select-box { background: #1a1d24; color: #c5c6c7; border: 1px solid rgba(255,255,255,0.1); padding: 6px 10px; border-radius: 8px; font-size: 13px; outline: none; }
+
+    /* Hero Section */
+    .badge { display: inline-block; background: rgba(243, 156, 18, 0.12); color: #f39c12; border: 1px solid rgba(243, 156, 18, 0.4); padding: 6px 16px; border-radius: 20px; font-weight: bold; font-size: 12px; margin-bottom: 18px; text-transform: uppercase; letter-spacing: 1px; }
+    h1 { font-size: 28px; font-weight: 800; margin-bottom: 14px; line-height: 1.25; }
+    h1 span { color: #f39c12; }
+    p.description { color: #9a9b9e; font-size: 15px; max-width: 480px; margin: 0 auto 28px auto; }
+
+    /* Features Grid (Bits & Pieces) */
+    .features-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; max-width: 520px; margin: 0 auto 28px auto; text-align: left; }
+    .feature-item { background: rgba(26, 29, 36, 0.6); border: 1px solid rgba(255,255,255,0.06); padding: 12px; border-radius: 10px; font-size: 13px; color: #c5c6c7; }
+    .feature-item span { color: #25d366; font-weight: bold; margin-right: 5px; }
+
+    /* Pricing Plans Section */
+    .section-title { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
+    .plans-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; max-width: 520px; margin: 0 auto 28px auto; }
+    .plan-card { 
+      background: rgba(26, 29, 36, 0.75); 
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.08); 
+      border-radius: 14px; 
+      padding: 16px 12px; 
+      position: relative;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      text-align: center;
+    }
+    .plan-card.popular { border: 1px solid #f39c12; background: rgba(243, 156, 18, 0.08); }
+    .popular-tag { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: #f39c12; color: #000; font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 10px; text-transform: uppercase; }
+    .plan-title { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .plan-price { font-size: 20px; font-weight: 800; color: #f39c12; margin-bottom: 8px; }
+    .plan-price span { font-size: 12px; color: #9a9b9e; font-weight: 400; }
+    .plan-features { font-size: 11px; color: #9a9b9e; margin-bottom: 12px; line-height: 1.4; }
+    
+    /* Action Buttons */
+    .btn-container { max-width: 520px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+    .btn { display: block; width: 100%; padding: 16px; border-radius: 12px; font-weight: 700; font-size: 16px; text-decoration: none; text-align: center; transition: transform 0.2s, box-shadow 0.2s; }
+    .btn:active { transform: scale(0.98); }
+    .btn-primary { background: #25d366; color: #fff; box-shadow: 0 6px 20px rgba(37, 211, 102, 0.25); }
+    .btn-secondary { background: rgba(255,255,255,0.03); color: #fff; border: 1px solid rgba(255,255,255,0.15); }
+    .btn-plan { display: inline-block; padding: 8px 14px; background: rgba(255,255,255,0.08); color: #fff; border-radius: 8px; font-size: 12px; font-weight: 700; text-decoration: none; border: 1px solid rgba(255,255,255,0.1); width: 100%; }
+    .btn-plan.highlight { background: #f39c12; color: #000; border: none; }
+
+    /* Supported Devices Footer */
+    .devices-footer { margin-top: 30px; font-size: 12px; color: #6c757d; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="brand">STREAM<span>MAX</span></div>
+    <div>
+      <select class="select-box">
+        <option>GBP (£)</option>
+        <option>USD ($)</option>
+        <option>EUR (€)</option>
+      </select>
+      <select class="select-box">
+        <option>English</option>
+        <option>العربية</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Hero Title -->
+  <div class="badge">VIP ULTRA HD STREAMING</div>
+  <h1>Zero Buffering.<br><span>18,000+ Live Channels</span> & 4K VOD</h1>
+  <p class="description">Stream live Premier League, Champions League, Arabic VIP networks, and latest Cinema Movies on any Smart TV, Firestick, or Smartphone.</p>
+
+  <!-- Bits & Pieces: Feature Highlights -->
+  <div class="features-list">
+    <div class="feature-item"><span>✓</span> 18,000+ Channels</div>
+    <div class="feature-item"><span>✓</span> 80,000+ VOD Movies</div>
+    <div class="feature-item"><span>✓</span> Anti-Freeze 4K Tech</div>
+    <div class="feature-item"><span>✓</span> 99.9% Uptime Server</div>
+  </div>
+
+  <!-- Subscription Pricing Grid -->
+  <div class="section-title">Select Your Plan</div>
+  <div class="plans-grid">
+    
+    <!-- 1 Month -->
+    <div class="plan-card">
+      <div class="plan-title">1 Month</div>
+      <div class="plan-price">£9.99 <span>/mo</span></div>
+      <div class="plan-features">Full 4K Access<br>1 Device Connection</div>
+      <a href="https://wa.me/447717095439?text=Hello!%20I%20want%20to%20buy%20the%201%20Month%20Plan%20(£9.99)." class="btn-plan">Get Plan</a>
+    </div>
+
+    <!-- 3 Months -->
+    <div class="plan-card">
+      <div class="plan-title">3 Months</div>
+      <div class="plan-price">£19.99 <span>/3mo</span></div>
+      <div class="plan-features">Save 33%<br>Full 4K & VIP VOD</div>
+      <a href="https://wa.me/447717095439?text=Hello!%20I%20want%20to%20buy%20the%203%20Months%20Plan%20(£19.99)." class="btn-plan">Get Plan</a>
+    </div>
+
+    <!-- 6 Months -->
+    <div class="plan-card">
+      <div class="plan-title">6 Months</div>
+      <div class="plan-price">£29.99 <span>/6mo</span></div>
+      <div class="plan-features">Save 50%<br>Free Setup Support</div>
+      <a href="https://wa.me/447717095439?text=Hello!%20I%20want%20to%20buy%20the%206%20Months%20Plan%20(£29.99)." class="btn-plan">Get Plan</a>
+    </div>
+
+    <!-- 12 Months (Best Value) -->
+    <div class="plan-card popular">
+      <div class="popular-tag">BEST VALUE</div>
+      <div class="plan-title">12 Months</div>
+      <div class="plan-price">£44.99 <span>/yr</span></div>
+      <div class="plan-features">Save 62%<br>VIP 24/7 Priority Support</div>
+      <a href="https://wa.me/447717095439?text=Hello!%20I%20want%20to%20buy%20the%2012%20Months%20VIP%20Plan%20(£44.99)." class="btn-plan highlight">Get Plan</a>
+    </div>
+
+  </div>
+
+  <!-- Primary Action Buttons -->
+  <div class="btn-container">
+    <a href="https://wa.me/447717095439?text=Hello!%20I%20want%20to%20request%20a%20FREE%2024h%20Trial%20for%20StreamMax." class="btn btn-primary">🚀 Request Free 24h Trial</a>
+    <a href="https://wa.me/447717095439?text=Hello!%20I%20have%20a%20question%20about%20StreamMax." class="btn btn-secondary">💬 Chat With Live Support</a>
+  </div>
+
+  <!-- Supported Devices -->
+  <div class="devices-footer">
+    📺 Compatible with Smart TV, Amazon Firestick, Android, iOS, Windows, & MAG boxes.
+  </div>
+
+</body>
+</html>
