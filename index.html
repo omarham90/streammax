@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,24 +7,49 @@
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
     
-    /* Modern Ambient Glow Background */
     body {
       background-color: #0b0c10;
       background-image: 
-        radial-gradient(circle at 50% 0%, rgba(243, 156, 18, 0.15) 0%, transparent 60%),
+        radial-gradient(circle at 50% 0%, rgba(243, 156, 18, 0.18) 0%, transparent 60%),
         radial-gradient(circle at 80% 80%, rgba(37, 211, 102, 0.08) 0%, transparent 50%);
       color: #ffffff;
       line-height: 1.6;
       text-align: center;
-      padding: 25px 15px;
+      padding: 0 15px 30px 15px;
       min-height: 100vh;
+    }
+
+    /* Top Ticker Banner */
+    .top-bar {
+      background: linear-gradient(90deg, #e74c3c, #f39c12);
+      color: #fff;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 6px 10px;
+      margin: 0 -15px 20px -15px;
+      letter-spacing: 0.5px;
     }
     
     /* Header & Selectors */
-    .header { display: flex; justify-content: space-between; align-items: center; max-width: 520px; margin: 0 auto 30px auto; }
+    .header { display: flex; justify-content: space-between; align-items: center; max-width: 520px; margin: 0 auto 25px auto; }
     .brand { font-size: 24px; font-weight: 800; color: #fff; letter-spacing: 2px; }
     .brand span { color: #f39c12; }
-    .select-box { background: #1a1d24; color: #c5c6c7; border: 1px solid rgba(255,255,255,0.1); padding: 6px 10px; border-radius: 8px; font-size: 13px; outline: none; }
+    .select-box { background: #1a1d24; color: #c5c6c7; border: 1px solid rgba(255,255,255,0.1); padding: 6px 10px; border-radius: 8px; font-size: 13px; outline: none; cursor: pointer; }
+
+    /* Trust Rating Badge */
+    .trust-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      color: #ffc107;
+      margin-bottom: 15px;
+    }
+    .trust-badge span { color: #c5c6c7; font-weight: 500; }
 
     /* Hero Section */
     .badge { display: inline-block; background: rgba(243, 156, 18, 0.12); color: #f39c12; border: 1px solid rgba(243, 156, 18, 0.4); padding: 6px 16px; border-radius: 20px; font-weight: bold; font-size: 12px; margin-bottom: 18px; text-transform: uppercase; letter-spacing: 1px; }
@@ -32,7 +57,7 @@
     h1 span { color: #f39c12; }
     p.description { color: #9a9b9e; font-size: 15px; max-width: 480px; margin: 0 auto 28px auto; }
 
-    /* Features Grid (Bits & Pieces) */
+    /* Features Grid */
     .features-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; max-width: 520px; margin: 0 auto 28px auto; text-align: left; }
     .feature-item { background: rgba(26, 29, 36, 0.6); border: 1px solid rgba(255,255,255,0.06); padding: 12px; border-radius: 10px; font-size: 13px; color: #c5c6c7; }
     .feature-item span { color: #25d366; font-weight: bold; margin-right: 5px; }
@@ -49,7 +74,9 @@
       position: relative;
       box-shadow: 0 10px 25px rgba(0,0,0,0.5);
       text-align: center;
+      transition: transform 0.2s, border-color 0.2s;
     }
+    .plan-card:hover { transform: translateY(-3px); border-color: rgba(243, 156, 18, 0.5); }
     .plan-card.popular { border: 1px solid #f39c12; background: rgba(243, 156, 18, 0.08); }
     .popular-tag { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: #f39c12; color: #000; font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 10px; text-transform: uppercase; }
     .plan-title { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 6px; }
@@ -66,90 +93,166 @@
     .btn-plan { display: inline-block; padding: 8px 14px; background: rgba(255,255,255,0.08); color: #fff; border-radius: 8px; font-size: 12px; font-weight: 700; text-decoration: none; border: 1px solid rgba(255,255,255,0.1); width: 100%; }
     .btn-plan.highlight { background: #f39c12; color: #000; border: none; }
 
+    /* FAQ Section */
+    .faq-container { max-width: 520px; margin: 30px auto 10px auto; text-align: left; }
+    .faq-item { background: rgba(26, 29, 36, 0.6); border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; margin-bottom: 10px; overflow: hidden; }
+    .faq-question { padding: 14px; font-size: 14px; font-weight: 600; color: #f39c12; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+    .faq-answer { padding: 0 14px 14px 14px; font-size: 13px; color: #9a9b9e; display: none; line-height: 1.5; }
+    .faq-item.active .faq-answer { display: block; }
+
     /* Supported Devices Footer */
     .devices-footer { margin-top: 30px; font-size: 12px; color: #6c757d; }
   </style>
 </head>
 <body>
 
+  <!-- Live Match Banner -->
+  <div class="top-bar" data-en="🔥 LIVE MATCHES TONIGHT: Premier League & Champions League in 4K!" data-ar="🔥 مباريات الليلة مباشر: الدوري الإنجليزي ودوري الأبطال بـ 4K!">
+    🔥 LIVE MATCHES TONIGHT: Premier League & Champions League in 4K!
+  </div>
+
   <!-- Header -->
   <div class="header">
     <div class="brand">STREAM<span>MAX</span></div>
     <div>
-      <select class="select-box">
-        <option>GBP (£)</option>
-        <option>USD ($)</option>
-        <option>EUR (€)</option>
+      <select class="select-box" id="currencySelect">
+        <option value="GBP">GBP (£)</option>
+        <option value="USD">USD ($)</option>
+        <option value="EUR">EUR (€)</option>
       </select>
-      <select class="select-box">
-        <option>English</option>
-        <option>العربية</option>
+      <select class="select-box" id="langSelect" onchange="switchLanguage()">
+        <option value="en">English</option>
+        <option value="ar">العربية</option>
       </select>
     </div>
   </div>
 
-  <!-- Hero Title -->
-  <div class="badge">VIP ULTRA HD STREAMING</div>
-  <h1>Zero Buffering.<br><span>18,000+ Live Channels</span> & 4K VOD</h1>
-  <p class="description">Stream live Premier League, Champions League, Arabic VIP networks, and latest Cinema Movies on any Smart TV, Firestick, or Smartphone.</p>
+  <!-- Social Proof Rating Badge -->
+  <div class="trust-badge">
+    ★ ★ ★ ★ ★ <span data-en="4.9/5 (12,500+ Active VIP Members)" data-ar="4.9/5 (أكثر من 12,500 مشترك)">4.9/5 (12,500+ Active VIP Members)</span>
+  </div>
 
-  <!-- Bits & Pieces: Feature Highlights -->
+  <!-- Hero Title -->
+  <div class="badge" data-en="VIP ULTRA HD STREAMING" data-ar="بث عالي الدقة VIP">VIP ULTRA HD STREAMING</div>
+  <h1 id="heroTitle">Zero Buffering.<br><span>18,000+ Live Channels</span> & 4K VOD</h1>
+  <p class="description" id="heroDesc">Stream live Premier League, Champions League, Arabic VIP networks, and latest Cinema Movies on any Smart TV, Firestick, or Smartphone.</p>
+
+  <!-- Feature Highlights -->
   <div class="features-list">
-    <div class="feature-item"><span>✓</span> 18,000+ Channels</div>
-    <div class="feature-item"><span>✓</span> 80,000+ VOD Movies</div>
-    <div class="feature-item"><span>✓</span> Anti-Freeze 4K Tech</div>
-    <div class="feature-item"><span>✓</span> 99.9% Uptime Server</div>
+    <div class="feature-item"><span>✓</span> <span data-en="18,000+ Channels" data-ar="أكثر من 18,000 قناة">18,000+ Channels</span></div>
+    <div class="feature-item"><span>✓</span> <span data-en="80,000+ VOD Movies" data-ar="أكثر من 80,000 فيلم ومسلسل">80,000+ VOD Movies</span></div>
+    <div class="feature-item"><span>✓</span> <span data-en="Anti-Freeze 4K Tech" data-ar="تقنية 4K ضد التقطيع">Anti-Freeze 4K Tech</span></div>
+    <div class="feature-item"><span>✓</span> <span data-en="99.9% Uptime Server" data-ar="استقرار السيرفر بنسبة 99.9%">99.9% Uptime Server</span></div>
   </div>
 
   <!-- Subscription Pricing Grid -->
-  <div class="section-title">Select Your Plan</div>
+  <div class="section-title" data-en="Select Your Plan" data-ar="اختر باقتك المفضلة">Select Your Plan</div>
   <div class="plans-grid">
     
     <!-- 1 Month -->
     <div class="plan-card">
-      <div class="plan-title">1 Month</div>
+      <div class="plan-title" data-en="1 Month" data-ar="شهر واحد">1 Month</div>
       <div class="plan-price">£9.99 <span>/mo</span></div>
-      <div class="plan-features">Full 4K Access<br>1 Device Connection</div>
-      <a href="https://wa.me/447717095439?text=Hello!%20I%20want%20to%20buy%20the%201%20Month%20Plan%20(£9.99)." class="btn-plan">Get Plan</a>
+      <div class="plan-features" data-en="Full 4K Access<br>1 Device Connection" data-ar="وصول كامل لـ 4K<br>جهاز واحد">Full 4K Access<br>1 Device Connection</div>
+      <a href="https://wa.me/447717095439?text=Hello!%20I%20want%20to%20buy%20the%201%20Month%20Plan%20(£9.99)." class="btn-plan" data-en="Get Plan" data-ar="اختر الباقة">Get Plan</a>
     </div>
 
     <!-- 3 Months -->
     <div class="plan-card">
-      <div class="plan-title">3 Months</div>
+      <div class="plan-title" data-en="3 Months" data-ar="3 أشهر">3 Months</div>
       <div class="plan-price">£19.99 <span>/3mo</span></div>
-      <div class="plan-features">Save 33%<br>Full 4K & VIP VOD</div>
-      <a href="https://wa.me/447717095439?text=Hello!%20I%20want%20to%20buy%20the%203%20Months%20Plan%20(£19.99)." class="btn-plan">Get Plan</a>
+      <div class="plan-features" data-en="Save 33%<br>Full 4K & VIP VOD" data-ar="وفر 33%<br>وصول كامل ومكتبة أفلام">Save 33%<br>Full 4K & VIP VOD</div>
+      <a href="https://wa.me/447717095439?text=Hello!%20I%20want%20to%20buy%20the%203%20Months%20Plan%20(£19.99)." class="btn-plan" data-en="Get Plan" data-ar="اختر الباقة">Get Plan</a>
     </div>
 
     <!-- 6 Months -->
     <div class="plan-card">
-      <div class="plan-title">6 Months</div>
+      <div class="plan-title" data-en="6 Months" data-ar="6 أشهر">6 Months</div>
       <div class="plan-price">£29.99 <span>/6mo</span></div>
-      <div class="plan-features">Save 50%<br>Free Setup Support</div>
-      <a href="https://wa.me/447717095439?text=Hello!%20I%20want%20to%20buy%20the%206%20Months%20Plan%20(£29.99)." class="btn-plan">Get Plan</a>
+      <div class="plan-features" data-en="Save 50%<br>Free Setup Support" data-ar="وفر 50%<br>دعم مجاني للإعداد">Save 50%<br>Free Setup Support</div>
+      <a href="https://wa.me/447717095439?text=Hello!%20I%20want%20to%20buy%20the%206%20Months%20Plan%20(£29.99)." class="btn-plan" data-en="Get Plan" data-ar="اختر الباقة">Get Plan</a>
     </div>
 
     <!-- 12 Months (Best Value) -->
     <div class="plan-card popular">
-      <div class="popular-tag">BEST VALUE</div>
-      <div class="plan-title">12 Months</div>
+      <div class="popular-tag" data-en="BEST VALUE" data-ar="الأفضل قيمة">BEST VALUE</div>
+      <div class="plan-title" data-en="12 Months" data-ar="12 شهر (سنة كاملة)">12 Months</div>
       <div class="plan-price">£44.99 <span>/yr</span></div>
-      <div class="plan-features">Save 62%<br>VIP 24/7 Priority Support</div>
-      <a href="https://wa.me/447717095439?text=Hello!%20I%20want%20to%20buy%20the%2012%20Months%20VIP%20Plan%20(£44.99)." class="btn-plan highlight">Get Plan</a>
+      <div class="plan-features" data-en="Save 62%<br>VIP 24/7 Priority Support" data-ar="وفر 62%<br>دعم VIP طوال الوقت">Save 62%<br>VIP 24/7 Priority Support</div>
+      <a href="https://wa.me/447717095439?text=Hello!%20I%20want%20to%20buy%20the%2012%20Months%20VIP%20Plan%20(£44.99)." class="btn-plan highlight" data-en="Get Plan" data-ar="اختر الباقة">Get Plan</a>
     </div>
 
   </div>
 
   <!-- Primary Action Buttons -->
   <div class="btn-container">
-    <a href="https://wa.me/447717095439?text=Hello!%20I%20want%20to%20request%20a%20FREE%2024h%20Trial%20for%20StreamMax." class="btn btn-primary">🚀 Request Free 24h Trial</a>
-    <a href="https://wa.me/447717095439?text=Hello!%20I%20have%20a%20question%20about%20StreamMax." class="btn btn-secondary">💬 Chat With Live Support</a>
+    <a href="https://wa.me/447717095439?text=Hello!%20I%20want%20to%20request%20a%20FREE%2024h%20Trial%20for%20StreamMax." class="btn btn-primary" data-en="🚀 Request Free 24h Trial" data-ar="🚀 اطلب تجربة مجانية لمدة 24 ساعة">🚀 Request Free 24h Trial</a>
+    <a href="https://wa.me/447717095439?text=Hello!%20I%20have%20a%20question%20about%20StreamMax." class="btn btn-secondary" data-en="💬 Chat With Live Support" data-ar="💬 تواصل مع الدعم الفني">💬 Chat With Live Support</a>
   </div>
 
-  <!-- Supported Devices -->
-  <div class="devices-footer">
+  <!-- FAQ Accordion Section -->
+  <div class="faq-container">
+    <div class="section-title" style="text-align: center; margin-bottom: 12px;" data-en="Frequently Asked Questions" data-ar="الأسئلة الشائعة">Frequently Asked Questions</div>
+    
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-question"><span data-en="⚡ How fast do I get my activation?" data-ar="⚡ ما السرعة التي أحصل بها على التفعيل؟">⚡ How fast do I get my activation?</span> <span>+</span></div>
+      <div class="faq-answer" data-en="Activations are processed within 2 minutes after payment! You will receive your Username, Password, and Server URL right in WhatsApp." data-ar="يتم التفعيل في أقل من دقيقتين بعد الدفع! ستستلم اسم المستخدم وكلمة السر رابط السيرفر مباشرة عبر واتساب.">Activations are processed within 2 minutes after payment! You will receive your Username, Password, and Server URL right in WhatsApp.</div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-question"><span data-en="📺 What devices are supported?" data-ar="📺 ما هي الأجهزة المدعومة؟">📺 What devices are supported?</span> <span>+</span></div>
+      <div class="faq-answer" data-en="StreamMax works on all Smart TVs (Samsung, LG, Android TV), Amazon Firestick, MAG boxes, iPhones, Android phones, tablets, and Windows PC." data-ar="يعمل StreamMax على جميع الشاشات الذكية (سامسونج، LG، أندرويد TV)، أمازون فايرستيك، أجهزة MAG، هواتف الآيفون والأندرويد، والكمبيوتر.">StreamMax works on all Smart TVs (Samsung, LG, Android TV), Amazon Firestick, MAG boxes, iPhones, Android phones, tablets, and Windows PC.</div>
+    </div>
+
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-question"><span data-en="⚽ Are live 4K sports included without buffering?" data-ar="⚽ هل القنوات الرياضية 4K بدون تقطيع؟">⚽ Are live 4K sports included without buffering?</span> <span>+</span></div>
+      <div class="faq-answer" data-en="Yes! Our servers feature anti-freeze technology with 99.9% uptime, covering all major sports leagues including Premier League, Champions League, and beIN Sports." data-ar="نعم! تتميز سيرفراتنا بتقنية ضد التقطيع واستقرار بنسبة 99.9% لمتابعة جميع الدوريات الكبرى والدوري الإنجليزي ودوري الأبطال وقنوات beIN.">Yes! Our servers feature anti-freeze technology with 99.9% uptime, covering all major sports leagues including Premier League, Champions League, and beIN Sports.</div>
+    </div>
+  </div>
+
+  <!-- Supported Devices Footer -->
+  <div class="devices-footer" data-en="📺 Compatible with Smart TV, Amazon Firestick, Android, iOS, Windows, & MAG boxes." data-ar="📺 متوافق مع الشاشات الذكية، أمازون فايرستيك، أندرويد، آي أو إس، وأجهزة MAG.">
     📺 Compatible with Smart TV, Amazon Firestick, Android, iOS, Windows, & MAG boxes.
   </div>
+
+  <!-- Interactive JavaScript Logic -->
+  <script>
+    // Toggle FAQ accordion items
+    function toggleFaq(element) {
+      element.classList.toggle('active');
+    }
+
+    // Switch language dynamically
+    function switchLanguage() {
+      const lang = document.getElementById('langSelect').value;
+      const htmlTag = document.documentElement;
+      
+      if (lang === 'ar') {
+        htmlTag.setAttribute('dir', 'rtl');
+      } else {
+        htmlTag.setAttribute('dir', 'ltr');
+      }
+
+      // Translate Hero Titles
+      if (lang === 'ar') {
+        document.getElementById('heroTitle').innerHTML = 'بدون تقطيع.<br><span>أكثر من 18,000 قناة</span> ومكتبة 4K';
+        document.getElementById('heroDesc').textContent = 'استمتع بمباريات الدوري الإنجليزي، دوري أبطال أوروبا، القنوات العربية VIP، وأحدث أفلام السينما على أي شاشة ذكية أو فايرستيك أو هاتفك.';
+      } else {
+        document.getElementById('heroTitle').innerHTML = 'Zero Buffering.<br><span>18,000+ Live Channels</span> & 4K VOD';
+        document.getElementById('heroDesc').textContent = 'Stream live Premier League, Champions League, Arabic VIP networks, and latest Cinema Movies on any Smart TV, Firestick, or Smartphone.';
+      }
+
+      // Translate elements with data-en and data-ar
+      document.querySelectorAll('[data-ar]').forEach(el => {
+        if (!el.id.includes('hero')) {
+          const text = el.getAttribute(`data-${lang}`);
+          if (text) {
+            el.innerHTML = text;
+          }
+        }
+      });
+    }
+  </script>
 
 </body>
 </html>
