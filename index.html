@@ -50,7 +50,7 @@
     .container { max-width: 1100px; margin: 0 auto; padding: 0 15px; text-align: center; }
 
     /* Hero Section */
-    .hero { padding: 40px 0 30px 0; }
+    .hero { padding: 40px 0 20px 0; }
     .status-badge {
       display: inline-flex;
       align-items: center;
@@ -69,7 +69,40 @@
     
     h1 { font-size: 36px; font-weight: 900; line-height: 1.2; margin-bottom: 16px; }
     h1 span { background: linear-gradient(90deg, #ff9f43, #ff5252); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    p.hero-subtitle { color: #a0aec0; font-size: 16px; max-width: 600px; margin: 0 auto 30px auto; }
+    p.hero-subtitle { color: #a0aec0; font-size: 16px; max-width: 600px; margin: 0 auto 25px auto; }
+
+    /* Moving Image / Logo Marquee */
+    .marquee-container {
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+      margin: 20px 0 40px 0;
+      background: rgba(255,255,255,0.02);
+      padding: 14px 0;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .marquee-content {
+      display: inline-flex;
+      gap: 40px;
+      animation: marquee 20s linear infinite;
+    }
+    .marquee-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #cbd5e0;
+      background: #151821;
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
 
     /* Feature Grid Boxes */
     .features-grid {
@@ -152,6 +185,13 @@
     .btn-plan.highlight { background: linear-gradient(90deg, #ff9f43, #ff5252); color: #fff; }
     .btn-plan:hover { opacity: 0.9; }
 
+    /* FAQ Section */
+    .faq-container { max-width: 700px; margin: 0 auto 50px auto; text-align: left; }
+    .faq-item { background: #12151e; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+    .faq-question { padding: 16px; font-size: 15px; font-weight: 700; color: #ff9f43; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+    .faq-answer { padding: 0 16px 16px 16px; font-size: 14px; color: #a0aec0; display: none; line-height: 1.6; }
+    .faq-item.active .faq-answer { display: block; }
+
     /* Floating WhatsApp CTA */
     .whatsapp-float {
       position: fixed;
@@ -210,6 +250,24 @@
       </div>
       <h1 id="heroTitle">Ultra HD 4K Streaming.<br><span>18,000+ Live Channels</span></h1>
       <p class="hero-subtitle" id="heroDesc">Enjoy non-stop sports, movies, series, and live TV on your Smart TV, Firestick, Apple TV, or mobile devices with zero freezing technology.</p>
+    </div>
+
+    <!-- Moving Photos / Logos Ticker -->
+    <div class="marquee-container">
+      <div class="marquee-content">
+        <div class="marquee-item">📺 Smart TV</div>
+        <div class="marquee-item">🔥 Amazon Firestick</div>
+        <div class="marquee-item">⚽ Premier League 4K</div>
+        <div class="marquee-item">🏆 Champions League</div>
+        <div class="marquee-item">🎬 Netflix & Shahid VIP</div>
+        <div class="marquee-item">📱 Android & Apple iOS</div>
+        <div class="marquee-item">📺 Smart TV</div>
+        <div class="marquee-item">🔥 Amazon Firestick</div>
+        <div class="marquee-item">⚽ Premier League 4K</div>
+        <div class="marquee-item">🏆 Champions League</div>
+        <div class="marquee-item">🎬 Netflix & Shahid VIP</div>
+        <div class="marquee-item">📱 Android & Apple iOS</div>
+      </div>
     </div>
 
     <!-- Feature Cards -->
@@ -279,6 +337,26 @@
 
     </div>
 
+    <!-- FAQ Accordion Section -->
+    <div class="faq-container">
+      <div class="section-title" style="text-align: center; margin-bottom: 20px;" data-en="Frequently Asked Questions" data-ar="الأسئلة الشائعة">Frequently Asked Questions</div>
+      
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question"><span data-en="⚡ How fast do I get my activation?" data-ar="⚡ ما السرعة التي أحصل بها على التفعيل؟">⚡ How fast do I get my activation?</span> <span>+</span></div>
+        <div class="faq-answer" data-en="Activations are processed within 2 minutes after payment! You will receive your credentials right in WhatsApp." data-ar="يتم التفعيل في أقل من دقيقتين بعد الدفع! ستستلم البيانات مباشرة عبر واتساب.">Activations are processed within 2 minutes after payment! You will receive your credentials right in WhatsApp.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question"><span data-en="📺 What devices are supported?" data-ar="📺 ما هي الأجهزة المدعومة؟">📺 What devices are supported?</span> <span>+</span></div>
+        <div class="faq-answer" data-en="StreamMax works on Smart TVs (Samsung, LG, Android TV), Amazon Firestick, Apple TV, iPhones, Android phones, and PC." data-ar="يعمل StreamMax على الشاشات الذكية (سامسونج، LG، أندرويد TV)، أمازون فايرستيك، أبل TV، والهواتف.">StreamMax works on Smart TVs (Samsung, LG, Android TV), Amazon Firestick, Apple TV, iPhones, Android phones, and PC.</div>
+      </div>
+
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-question"><span data-en="⚽ Are live 4K sports included without buffering?" data-ar="⚽ هل القنوات الرياضية 4K بدون تقطيع؟">⚽ Are live 4K sports included without buffering?</span> <span>+</span></div>
+        <div class="faq-answer" data-en="Yes! Our servers feature anti-freeze technology with 99.9% uptime, covering all major sports leagues." data-ar="نعم! تتميز سيرفراتنا بتقنية ضد التقطيع واستقرار بنسبة 99.9% لمتابعة جميع الدوريات الكبرى.">Yes! Our servers feature anti-freeze technology with 99.9% uptime, covering all major sports leagues.</div>
+      </div>
+    </div>
+
     <!-- Footer -->
     <footer>
       STREAMMAX &copy; 2026. All rights reserved. Ultra Fast IPTV Streaming Platform.
@@ -291,8 +369,12 @@
     <span>💬</span> <span data-en="Get Free Trial" data-ar="احصل على تجربة مجانية">Get Free Trial</span>
   </a>
 
-  <!-- Script for Language Switcher -->
+  <!-- Script for FAQ and Language Switcher -->
   <script>
+    function toggleFaq(element) {
+      element.classList.toggle('active');
+    }
+
     function switchLanguage() {
       const lang = document.getElementById('langSelect').value;
       const htmlTag = document.documentElement;
