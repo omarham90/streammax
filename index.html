@@ -3,7 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>STREAMMAX | VIP 4K Ultra HD Streaming</title>
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>STREAMMAX | VIP 4K IPTV Subscription & Free 24h Trial</title>
+  <meta name="title" content="STREAMMAX | VIP 4K IPTV Subscription & Free 24h Trial">
+  <meta name="description" content="Stream 18,000+ live TV channels, Premier League, Champions League, Arabic VIP networks, and 80,000+ 4K VOD movies with zero buffering on STREAMMAX. Request a free trial now!">
+  <meta name="keywords" content="STREAMMAX, VIP IPTV, 4K Streaming, Live Football 4K, Premier League Stream, Arabic IPTV, IPTV Free Trial">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Social Media Links -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://streammax-vip.com/">
+  <meta property="og:title" content="STREAMMAX | VIP 4K Ultra HD Streaming">
+  <meta property="og:description" content="Get 18,000+ channels and 80,000+ VOD movies in crystal clear 4K. Fast activation via WhatsApp.">
+
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
     
@@ -217,12 +230,10 @@
 
   <!-- Interactive JavaScript Logic -->
   <script>
-    // Toggle FAQ accordion items
     function toggleFaq(element) {
       element.classList.toggle('active');
     }
 
-    // Switch language dynamically
     function switchLanguage() {
       const lang = document.getElementById('langSelect').value;
       const htmlTag = document.documentElement;
@@ -233,7 +244,6 @@
         htmlTag.setAttribute('dir', 'ltr');
       }
 
-      // Translate Hero Titles
       if (lang === 'ar') {
         document.getElementById('heroTitle').innerHTML = 'بدون تقطيع.<br><span>أكثر من 18,000 قناة</span> ومكتبة 4K';
         document.getElementById('heroDesc').textContent = 'استمتع بمباريات الدوري الإنجليزي، دوري أبطال أوروبا، القنوات العربية VIP، وأحدث أفلام السينما على أي شاشة ذكية أو فايرستيك أو هاتفك.';
@@ -242,7 +252,6 @@
         document.getElementById('heroDesc').textContent = 'Stream live Premier League, Champions League, Arabic VIP networks, and latest Cinema Movies on any Smart TV, Firestick, or Smartphone.';
       }
 
-      // Translate elements with data-en and data-ar
       document.querySelectorAll('[data-ar]').forEach(el => {
         if (!el.id.includes('hero')) {
           const text = el.getAttribute(`data-${lang}`);
