@@ -23,6 +23,7 @@
       line-height: 1.6;
       padding-bottom: 90px;
       min-height: 100vh;
+      scroll-behavior: smooth;
     }
 
     /* Top Announcement Ticker */
@@ -44,11 +45,62 @@
       align-items: center;
       max-width: 1100px;
       margin: 0 auto;
-      padding: 20px 15px;
+      padding: 18px 15px;
+      position: relative;
     }
     .brand { font-size: 26px; font-weight: 900; color: #fff; letter-spacing: 1.5px; }
     .brand span { color: #ff9f43; }
-    .nav-controls { display: flex; gap: 8px; }
+    .nav-controls { display: flex; align-items: center; gap: 10px; }
+
+    /* Dropdown Menu Styles */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-btn {
+      background: #151821;
+      color: #d1d5db;
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 7px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: #12151e;
+      min-width: 170px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      margin-top: 8px;
+      z-index: 1000;
+      overflow: hidden;
+    }
+    .dropdown-content a {
+      color: #cbd5e0;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      transition: background 0.2s, color 0.2s;
+    }
+    .dropdown-content a:hover {
+      background: rgba(255, 159, 67, 0.15);
+      color: #ff9f43;
+    }
+    .dropdown.active .dropdown-content {
+      display: block;
+    }
+
     .select-box { background: #151821; color: #d1d5db; border: 1px solid rgba(255,255,255,0.12); padding: 7px 12px; border-radius: 8px; font-size: 13px; outline: none; cursor: pointer; }
 
     /* Container Wrapper */
@@ -295,7 +347,21 @@
   <!-- Navbar -->
   <div class="navbar">
     <div class="brand">STREAM<span>MAX</span></div>
+    
     <div class="nav-controls">
+      <!-- Dropdown Menu -->
+      <div class="dropdown" id="navDropdown">
+        <button class="dropdown-btn" onclick="toggleDropdown()">
+          <span data-en="Menu ☰" data-ar="القائمة ☰">Menu ☰</span>
+        </button>
+        <div class="dropdown-content">
+          <a href="#plans" onclick="closeDropdown()" data-en="💳 Plans & Pricing" data-ar="💳 الباقات والأسعار">💳 Plans & Pricing</a>
+          <a href="#reviews" onclick="closeDropdown()" data-en="⭐️ Reviews" data-ar="⭐️ آراء العملاء">⭐️ Reviews</a>
+          <a href="#faq" onclick="closeDropdown()" data-en="❓ FAQs" data-ar="❓ الأسئلة الشائعة">❓ FAQs</a>
+          <a href="https://wa.me/447717095439?text=Hello!%20I%20want%20a%20FREE%2024h%20Trial." data-en="🚀 Free Trial" data-ar="🚀 تجربة مجانية">🚀 Free Trial</a>
+        </div>
+      </div>
+
       <select class="select-box" id="currencySelect">
         <option value="GBP">GBP (£)</option>
         <option value="USD">USD ($)</option>
@@ -361,7 +427,8 @@
       </div>
     </div>
 
-    <!-- Pricing Plans -->
+    <!-- Pricing Plans Section -->
+    <div id="plans"></div>
     <div class="section-title" data-en="Subscription Plans" data-ar="باقات الاشتراك">Subscription Plans</div>
     <div class="section-subtitle" data-en="Choose your package and start streaming instantly" data-ar="اختر باقتك وابدأ المشاهدة فوراً">Choose your package and start streaming instantly</div>
 
@@ -410,6 +477,7 @@
     </div>
 
     <!-- Customer Reviews Section -->
+    <div id="reviews"></div>
     <div class="section-title" data-en="What Our Customers Say" data-ar="آراء العملاء">What Our Customers Say</div>
     <div class="section-subtitle" data-en="Over 12,500+ satisfied subscribers worldwide" data-ar="أكثر من 12,500 مشترك راضٍ حول العالم">Over 12,500+ satisfied subscribers worldwide</div>
 
@@ -446,6 +514,7 @@
     </div>
 
     <!-- FAQ Accordion Section -->
+    <div id="faq"></div>
     <div class="faq-container">
       <div class="section-title" style="text-align: center; margin-bottom: 20px;" data-en="Frequently Asked Questions" data-ar="الأسئلة الشائعة">Frequently Asked Questions</div>
       
@@ -477,8 +546,23 @@
     <span>💬</span> <span data-en="Get Free Trial" data-ar="احصل على تجربة مجانية">Get Free Trial</span>
   </a>
 
-  <!-- Script for FAQ and Language Switcher -->
+  <!-- Script for Dropdown, FAQ, and Language Switcher -->
   <script>
+    function toggleDropdown() {
+      document.getElementById('navDropdown').classList.toggle('active');
+    }
+
+    function closeDropdown() {
+      document.getElementById('navDropdown').classList.remove('active');
+    }
+
+    // Close dropdown when clicking anywhere outside
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropdown-btn') && !event.target.parentElement.matches('.dropdown-btn')) {
+        closeDropdown();
+      }
+    }
+
     function toggleFaq(element) {
       element.classList.toggle('active');
     }
