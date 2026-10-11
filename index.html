@@ -138,10 +138,11 @@
     .feature-title { font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 6px; }
     .feature-desc { font-size: 13px; color: #94a3b8; line-height: 1.5; }
 
-    /* Pricing Section */
+    /* Section Headers */
     .section-title { font-size: 26px; font-weight: 800; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
     .section-subtitle { color: #94a3b8; font-size: 15px; margin-bottom: 35px; }
-    
+
+    /* Pricing Section */
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -203,6 +204,54 @@
     }
     .btn-plan.highlight { background: linear-gradient(90deg, #ff9f43, #ff5252); color: #fff; }
     .btn-plan:active { transform: scale(0.98); }
+
+    /* Customer Reviews Section */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-bottom: 50px;
+      text-align: left;
+    }
+    .review-card {
+      background: #12151e;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 22px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+    .stars { color: #ffc107; font-size: 15px; margin-bottom: 10px; }
+    .review-text { font-size: 13px; color: #cbd5e0; margin-bottom: 14px; line-height: 1.5; }
+    .reviewer-name { font-size: 14px; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 6px; }
+    .verified-badge { background: rgba(37, 211, 102, 0.15); color: #25d366; font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 600; }
+
+    /* Accepted Payments Section */
+    .payment-section {
+      background: #12151e;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 25px;
+      margin-bottom: 50px;
+    }
+    .payment-icons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 15px;
+    }
+    .pay-badge {
+      background: #1a1e2b;
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 10px 18px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 800;
+      color: #cbd5e0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
 
     /* FAQ Section */
     .faq-container { max-width: 720px; margin: 0 auto 50px auto; text-align: left; }
@@ -282,7 +331,7 @@
         <div class="marquee-badge">📺 SMART TV & FIRESTICK</div>
         <div class="marquee-badge">🏆 CHAMPIONS LEAGUE</div>
         
-        <!-- Duplicated items for seamless infinite sliding loop -->
+        <!-- Duplicated for continuous animation -->
         <div class="marquee-badge netflix">🔴 NETFLIX 4K VOD</div>
         <div class="marquee-badge prime">📦 PRIME VIDEO</div>
         <div class="marquee-badge bein">🟣 beIN SPORTS VIP</div>
@@ -358,6 +407,42 @@
         <a href="https://wa.me/447717095439?text=Hello!%20I%20want%20to%20order%20the%2012%20Months%20VIP%20Plan%20(£44.99)." class="btn-plan highlight" data-en="Order Now" data-ar="اطلب الآن">Order Now</a>
       </div>
 
+    </div>
+
+    <!-- Customer Reviews Section -->
+    <div class="section-title" data-en="What Our Customers Say" data-ar="آراء العملاء">What Our Customers Say</div>
+    <div class="section-subtitle" data-en="Over 12,500+ satisfied subscribers worldwide" data-ar="أكثر من 12,500 مشترك راضٍ حول العالم">Over 12,500+ satisfied subscribers worldwide</div>
+
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text" data-en="“Incredible server quality! Watched the whole Premier League match weekend in 4K with zero freezing on my Firestick.”" data-ar="“جودة سيرفر ممتازة جداً! تابعت جميع مباريات الدوري الإنجليزي بجودة 4K وبدون أي تقطيع.”">“Incredible server quality! Watched the whole Premier League match weekend in 4K with zero freezing on my Firestick.”</p>
+        <div class="reviewer-name">James K. <span class="verified-badge">✓ Verified User</span></div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text" data-en="“Instant setup via WhatsApp. I got my trial within 2 minutes and subscribed for 12 months immediately.”" data-ar="“تفعيل فوري عبر الواتساب. استلمت التجربة في دقيقتين واشتركت لمدة سنة مباشرة.”">“Instant setup via WhatsApp. I got my trial within 2 minutes and subscribed for 12 months immediately.”</p>
+        <div class="reviewer-name">Tariq M. <span class="verified-badge">✓ Verified User</span></div>
+      </div>
+
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p class="review-text" data-en="“Huge cinema library with latest 2026 movies and Shahid VIP shows in full HD. Highly recommended!”" data-ar="“مكتبة أفلام وضخمة جداً تحتوي على أحدث أفلام 2026 ومسلسلات شاهد بجودة عالية.”">“Huge cinema library with latest movies and Shahid VIP shows in full HD. Highly recommended!”</p>
+        <div class="reviewer-name">David L. <span class="verified-badge">✓ Verified User</span></div>
+      </div>
+    </div>
+
+    <!-- Accepted Payment Methods -->
+    <div class="payment-section">
+      <div class="section-title" style="font-size: 18px; margin-bottom: 5px;" data-en="Accepted Secure Payments" data-ar="طرق الدفع الآمنة المقبولة">Accepted Secure Payments</div>
+      <div class="payment-icons">
+        <div class="pay-badge">💳 PayPal</div>
+        <div class="pay-badge">💳 VISA</div>
+        <div class="pay-badge">💳 Mastercard</div>
+        <div class="pay-badge">🏦 Bank Transfer</div>
+        <div class="pay-badge">⚡ Revolut</div>
+      </div>
     </div>
 
     <!-- FAQ Accordion Section -->
