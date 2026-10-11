@@ -76,41 +76,42 @@
     h1 span { background: linear-gradient(90deg, #ff9f43, #ff5252); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     p.hero-subtitle { color: #a0aec0; font-size: 16px; max-width: 620px; margin: 0 auto 25px auto; }
 
-    /* Moving Image & Logo Marquee */
+    /* Moving Banner / Marquee */
     .marquee-container {
       overflow: hidden;
       white-space: nowrap;
       position: relative;
       margin: 25px 0 45px 0;
       background: rgba(255,255,255,0.03);
-      padding: 16px 0;
+      padding: 18px 0;
       border-top: 1px solid rgba(255,255,255,0.08);
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
     .marquee-content {
       display: inline-flex;
       align-items: center;
-      gap: 25px;
-      animation: marquee 22s linear infinite;
+      gap: 20px;
+      animation: marquee 25s linear infinite;
     }
-    .marquee-item {
+    .marquee-badge {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      font-size: 13px;
-      font-weight: 700;
-      color: #e2e8f0;
-      background: #12151e;
-      padding: 8px 18px;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 800;
+      color: #fff;
+      background: #151922;
+      padding: 10px 20px;
       border-radius: 30px;
-      border: 1px solid rgba(255,255,255,0.1);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.5);
     }
-    .marquee-item img {
-      height: 20px;
-      width: 20px;
-      object-fit: contain;
-    }
+    .marquee-badge.netflix { border-color: #E50914; color: #ff4d4f; }
+    .marquee-badge.prime { border-color: #00A8E1; color: #38bdf8; }
+    .marquee-badge.bein { border-color: #8b5cf6; color: #c084fc; }
+    .marquee-badge.shahid { border-color: #f97316; color: #fb923c; }
+    .marquee-badge.sport { border-color: #22c55e; color: #4ade80; }
+    
     @keyframes marquee {
       0% { transform: translateX(0%); }
       100% { transform: translateX(-50%); }
@@ -270,23 +271,25 @@
       <p class="hero-subtitle" id="heroDesc">Enjoy non-stop sports, movies, series, and live TV on your Smart TV, Firestick, Apple TV, or mobile devices with zero freezing technology.</p>
     </div>
 
-    <!-- Moving Channel & Device Image Marquee (Reliable CDN URLs) -->
+    <!-- Moving Dynamic Badges Marquee -->
     <div class="marquee-container">
       <div class="marquee-content">
-        <div class="marquee-item"><img src="https://cdn.simpleicons.org/netflix/E50914" alt="Netflix"> Netflix 4K</div>
-        <div class="marquee-item"><img src="https://cdn.simpleicons.org/prime/00A8E1" alt="Prime Video"> Prime Video</div>
-        <div class="marquee-item"><img src="https://cdn.simpleicons.org/apple/FFFFFF" alt="Apple TV"> Apple TV+</div>
-        <div class="marquee-item"><img src="https://cdn.simpleicons.org/android/3DDC84" alt="Android TV"> Android TV</div>
-        <div class="marquee-item"><img src="https://cdn.simpleicons.org/amazon/FF9900" alt="Firestick"> Firestick</div>
-        <div class="marquee-item"><img src="https://cdn.simpleicons.org/youtube/FF0000" alt="Live TV"> Live 4K Sports</div>
+        <div class="marquee-badge netflix">🔴 NETFLIX 4K VOD</div>
+        <div class="marquee-badge prime">📦 PRIME VIDEO</div>
+        <div class="marquee-badge bein">🟣 beIN SPORTS VIP</div>
+        <div class="marquee-badge shahid">🟠 SHAHID VIP</div>
+        <div class="marquee-badge sport">⚽ PREMIER LEAGUE 4K</div>
+        <div class="marquee-badge">📺 SMART TV & FIRESTICK</div>
+        <div class="marquee-badge">🏆 CHAMPIONS LEAGUE</div>
         
-        <!-- Duplicated for seamless loop -->
-        <div class="marquee-item"><img src="https://cdn.simpleicons.org/netflix/E50914" alt="Netflix"> Netflix 4K</div>
-        <div class="marquee-item"><img src="https://cdn.simpleicons.org/prime/00A8E1" alt="Prime Video"> Prime Video</div>
-        <div class="marquee-item"><img src="https://cdn.simpleicons.org/apple/FFFFFF" alt="Apple TV"> Apple TV+</div>
-        <div class="marquee-item"><img src="https://cdn.simpleicons.org/android/3DDC84" alt="Android TV"> Android TV</div>
-        <div class="marquee-item"><img src="https://cdn.simpleicons.org/amazon/FF9900" alt="Firestick"> Firestick</div>
-        <div class="marquee-item"><img src="https://cdn.simpleicons.org/youtube/FF0000" alt="Live TV"> Live 4K Sports</div>
+        <!-- Duplicated items for seamless infinite sliding loop -->
+        <div class="marquee-badge netflix">🔴 NETFLIX 4K VOD</div>
+        <div class="marquee-badge prime">📦 PRIME VIDEO</div>
+        <div class="marquee-badge bein">🟣 beIN SPORTS VIP</div>
+        <div class="marquee-badge shahid">🟠 SHAHID VIP</div>
+        <div class="marquee-badge sport">⚽ PREMIER LEAGUE 4K</div>
+        <div class="marquee-badge">📺 SMART TV & FIRESTICK</div>
+        <div class="marquee-badge">🏆 CHAMPIONS LEAGUE</div>
       </div>
     </div>
 
