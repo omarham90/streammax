@@ -1,598 +1,677 @@
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- Primary SEO Meta Tags -->
-  <title>STREAMMAX | Premium VIP 4K IPTV Subscription & Reseller Panels</title>
-  <meta name="title" content="STREAMMAX | Premium VIP 4K IPTV Subscription & Reseller Panels">
-  <meta name="description" content="Access 18,000+ Live Channels, Sports 4K, and VOD Movies. Start your own business with STREAMMAX Reseller Panels.">
-  <meta name="keywords" content="STREAMMAX, VIP IPTV, 4K Streaming, IPTV Reseller Panel, Become IPTV Reseller">
-  <meta name="robots" content="index, follow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#08090d">
+<meta name="robots" content="index,follow">
+<title>STREAMMAX | Streaming Plans & Reseller Information</title>
+<meta name="description" content="Explore STREAMMAX subscription options, supported devices, setup information and customer support. Contact us to confirm availability, pricing and service details.">
+<link rel="canonical" href="https://streammax-vip.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="STREAMMAX | Streaming Plans">
+<meta property="og:description" content="Explore streaming plan options, supported devices and customer support from STREAMMAX.">
+<meta property="og:url" content="https://streammax-vip.com/">
+<meta name="twitter:card" content="summary">
 
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-    
-    body {
-      background-color: #08090d;
-      background-image: 
-        radial-gradient(circle at 50% 0%, rgba(255, 159, 67, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 60%, rgba(255, 82, 82, 0.08) 0%, transparent 40%);
-      color: #ffffff;
-      line-height: 1.6;
-      padding-bottom: 90px;
-      min-height: 100vh;
-      scroll-behavior: smooth;
-    }
+<style>
+:root {
+  color-scheme: dark;
+  --bg: #08090d;
+  --panel: #12151e;
+  --panel2: #171b26;
+  --text: #f8fafc;
+  --muted: #a8b1c2;
+  --line: rgba(255,255,255,.1);
+  --orange: #ff9f43;
+  --red: #ff5252;
+  --green: #31c878;
+  --radius: 18px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,159,67,.13), transparent 45%),
+    radial-gradient(circle at 85% 55%, rgba(255,82,82,.07), transparent 38%),
+    var(--bg);
+  color: var(--text);
+  font: 16px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+button, select { font: inherit; }
+a { color: inherit; }
+button:focus-visible,a:focus-visible,select:focus-visible,summary:focus-visible {
+  outline: 3px solid #ffd19b;
+  outline-offset: 3px;
+}
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0;
+  margin: -1px; overflow: hidden; clip: rect(0,0,0,0);
+  white-space: nowrap; border: 0;
+}
+.ticker {
+  padding: 8px 14px;
+  text-align: center;
+  font-size: .82rem;
+  font-weight: 800;
+  letter-spacing: .03em;
+  background: linear-gradient(90deg,#ff4b2b,#ff416c);
+}
+.nav-wrap { position: relative; z-index: 5; border-bottom: 1px solid rgba(255,255,255,.05); }
+.navbar {
+  max-width: 1120px; margin: auto; padding: 16px;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.brand { font-weight: 950; font-size: 1.55rem; letter-spacing: .08em; text-decoration: none; white-space: nowrap; }
+.brand span,.accent { color: var(--orange); }
+.nav-controls { display: flex; align-items: center; gap: 9px; }
+.select,.menu-button {
+  background: var(--panel2); border: 1px solid var(--line);
+  border-radius: 10px; color: var(--text); padding: 9px 11px; min-height: 42px;
+}
+.menu-button { cursor: pointer; font-weight: 700; }
+.dropdown { position: relative; }
+.dropdown-content {
+  display: none; position: absolute; right: 0; top: calc(100% + 8px);
+  min-width: 220px; background: #12151e; border: 1px solid var(--line);
+  border-radius: 12px; padding: 7px; box-shadow: 0 18px 40px #0009;
+}
+.dropdown.open .dropdown-content { display: block; }
+.dropdown-content a {
+  display: block; text-decoration: none; padding: 10px 12px;
+  border-radius: 8px; color: #dce3ef; font-size: .92rem;
+}
+.dropdown-content a:hover { background: #252a37; color: var(--orange); }
+main { overflow: hidden; }
+.container { width: min(1100px,100% - 32px); margin: 0 auto; }
+.hero { text-align: center; padding: 55px 0 26px; }
+.status {
+  display: inline-flex; align-items: center; gap: 8px; padding: 6px 13px;
+  border: 1px solid #31c87866; background: #31c87816; color: #8af0b6;
+  border-radius: 999px; font-size: .8rem; font-weight: 800; margin-bottom: 18px;
+}
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
+h1 {
+  font-size: clamp(2rem,5.5vw,3.35rem); line-height: 1.12;
+  letter-spacing: -.035em; margin: 0 auto 17px; max-width: 850px;
+}
+h1 span {
+  background: linear-gradient(90deg,var(--orange),var(--red));
+  background-clip: text; -webkit-background-clip: text; color: transparent;
+}
+.subtitle { color: var(--muted); max-width: 680px; margin: 0 auto 25px; }
+.hero-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-flex; justify-content: center; align-items: center; gap: 8px;
+  padding: 12px 18px; border-radius: 12px; border: 1px solid var(--line);
+  background: #ffffff0d; color: white; text-decoration: none; font-weight: 800;
+  cursor: pointer; transition: transform .15s,filter .15s;
+}
+.btn:hover { filter: brightness(1.12); transform: translateY(-1px); }
+.btn-primary { border: 0; background: linear-gradient(90deg,var(--orange),var(--red)); color: #17120e; }
+.btn-whatsapp { background: #25d366; color: #071b0e; border: 0; }
+.feature-strip {
+  display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin: 28px 0 48px;
+}
+.feature { background: #151922; border: 1px solid var(--line); border-radius: 999px; padding: 9px 14px; font-size: .88rem; font-weight: 750; }
+section { margin: 0 0 54px; }
+.section-heading { text-align: center; margin: 0 auto 28px; }
+.section-heading h2 { font-size: clamp(1.45rem,3.5vw,2rem); line-height: 1.2; margin: 0 0 10px; text-transform: uppercase; letter-spacing: .035em; }
+.section-heading p { color: var(--muted); margin: 0 auto; max-width: 690px; }
+.pricing-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; }
+.plan-card {
+  position: relative; display: flex; flex-direction: column; min-width: 0;
+  background: linear-gradient(180deg,#151925,var(--panel));
+  border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 25px 21px; box-shadow: 0 12px 30px #0002;
+}
+.plan-card.featured { border: 2px solid var(--orange); background: linear-gradient(180deg,#39271966,var(--panel) 55%); }
+.popular { align-self: flex-start; background: linear-gradient(90deg,var(--orange),var(--red)); color: #21160d; padding: 4px 10px; border-radius: 999px; font-size: .72rem; font-weight: 900; margin-bottom: 12px; }
+.plan-name { font-size: 1.15rem; font-weight: 850; margin-bottom: 6px; }
+.price { font-size: 2.05rem; font-weight: 950; color: var(--orange); line-height: 1.25; margin: 8px 0 2px; }
+.price-note { color: var(--muted); font-size: .82rem; min-height: 24px; }
+.conversion-note { color: #8994a7; font-size: .76rem; margin: 14px 0 0; }
+.plan-list { list-style: none; padding: 0; margin: 15px 0 23px; flex: 1; }
+.plan-list li { padding: 9px 0; border-bottom: 1px solid #ffffff0b; color: #d5dbe5; font-size: .9rem; display: flex; gap: 9px; }
+.check { color: var(--green); font-weight: 900; }
+.plan-card .btn { width: 100%; margin-top: auto; }
+.reseller-box { padding: clamp(20px,4vw,36px); border: 1px solid #ff704344; border-radius: var(--radius); background: linear-gradient(180deg,#ff4b2b12,var(--panel)); }
+.reseller-box .pricing-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.notice { padding: 14px 16px; background: #ffffff08; border: 1px solid var(--line); border-radius: 12px; color: var(--muted); font-size: .9rem; margin-top: 18px; }
+.two-col { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; }
+.info-card { padding: 22px; background: var(--panel); border: 1px solid var(--line); border-radius: 16px; }
+.info-card h3 { margin: 0 0 8px; font-size: 1.05rem; }
+.info-card p { color: var(--muted); margin: 0; }
+.faq { max-width: 800px; margin: auto; }
+details { background: var(--panel); border: 1px solid var(--line); border-radius: 13px; margin-bottom: 11px; overflow: hidden; }
+summary { cursor: pointer; padding: 17px 18px; font-weight: 800; color: #ffc17d; list-style: none; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; float: inline-end; font-size: 1.2rem; }
+details[open] summary::after { content: "−"; }
+.answer { padding: 0 18px 18px; color: var(--muted); }
+.legal-links { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin: 18px 0; }
+.legal-links button { background: none; border: 0; color: #cbd5e1; text-decoration: underline; cursor: pointer; padding: 5px; }
+footer { border-top: 1px solid var(--line); padding: 28px 0 100px; color: #8993a5; font-size: .85rem; text-align: center; }
+.footer-brand { font-weight: 900; color: #fff; font-size: 1.1rem; margin-bottom: 5px; }
+.floating-cta { position: fixed; z-index: 10; right: 16px; bottom: 16px; box-shadow: 0 9px 26px #25d36655; }
+.modal { position: fixed; inset: 0; display: none; place-items: center; padding: 18px; background: #000b; z-index: 20; }
+.modal.open { display: grid; }
+.modal-panel { width: min(720px,100%); max-height: 85vh; overflow: auto; background: #12151e; border: 1px solid var(--line); border-radius: 18px; padding: 24px; }
+.modal-top { display: flex; align-items: center; justify-content: space-between; gap: 15px; }
+.modal-top h2 { margin: 0; font-size: 1.35rem; }
+.close-modal { border: 1px solid var(--line); background: #ffffff0b; color: #fff; border-radius: 9px; padding: 7px 12px; cursor: pointer; }
+.modal-panel p,.modal-panel li { color: var(--muted); }
+[dir="rtl"] body { text-align: right; }
+[dir="rtl"] .dropdown-content { right: auto; left: 0; }
+[dir="rtl"] .floating-cta { right: auto; left: 16px; }
+[dir="rtl"] .faq summary::after { float: left; }
+[dir="rtl"] .hero,[dir="rtl"] .section-heading { text-align: center; }
 
-    /* Top Announcement Ticker */
-    .ticker-bar {
-      background: linear-gradient(90deg, #ff4b2b, #ff416c);
-      color: #fff;
-      font-size: 13px;
-      font-weight: 700;
-      text-align: center;
-      padding: 8px 12px;
-      letter-spacing: 0.5px;
-      box-shadow: 0 2px 10px rgba(255, 75, 43, 0.3);
-    }
+@media(max-width:800px) {
+  .pricing-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .pricing-grid .plan-card:last-child:nth-child(odd) { grid-column: 1/-1; }
+  .navbar { flex-wrap: wrap; }
+  .nav-controls { margin-left: auto; }
+  .reseller-box .pricing-grid { grid-template-columns: 1fr; }
+}
+@media(max-width:560px) {
+  .container { width: min(100% - 24px,1100px); }
+  .navbar { padding: 12px; }
+  .brand { font-size: 1.3rem; }
+  .nav-controls { gap: 6px; }
+  .select,.menu-button { padding: 8px; font-size: .82rem; }
+  .hero { padding-top: 38px; }
+  .pricing-grid,.two-col { grid-template-columns: 1fr; }
+  .pricing-grid .plan-card:last-child:nth-child(odd) { grid-column: auto; }
+  .plan-card { padding: 23px 19px; }
+  .feature-strip { margin-bottom: 38px; }
+  .floating-cta { left: 12px; right: 12px; bottom: 12px; width: auto; }
+  .floating-cta .btn { width: 100%; }
+  footer { padding-bottom: 100px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after { scroll-behavior: auto!important; transition: none!important; }
+}
+</style>
 
-    /* Navigation Bar */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 18px 15px;
-      position: relative;
-    }
-    .brand { font-size: 26px; font-weight: 900; color: #fff; letter-spacing: 1.5px; }
-    .brand span { color: #ff9f43; }
-    .nav-controls { display: flex; align-items: center; gap: 10px; }
-
-    /* Dropdown Menu Styles */
-    .dropdown { position: relative; display: inline-block; }
-    .dropdown-btn {
-      background: #151821;
-      color: #d1d5db;
-      border: 1px solid rgba(255,255,255,0.12);
-      padding: 7px 14px;
-      border-radius: 8px;
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      right: 0;
-      background: #12151e;
-      min-width: 180px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 10px;
-      margin-top: 8px;
-      z-index: 1000;
-      overflow: hidden;
-    }
-    .dropdown-content a {
-      color: #cbd5e0;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-      font-size: 13px;
-      font-weight: 600;
-      transition: background 0.2s, color 0.2s;
-    }
-    .dropdown-content a:hover {
-      background: rgba(255, 159, 67, 0.15);
-      color: #ff9f43;
-    }
-    .dropdown.active .dropdown-content { display: block; }
-
-    .select-box { background: #151821; color: #d1d5db; border: 1px solid rgba(255,255,255,0.12); padding: 7px 12px; border-radius: 8px; font-size: 13px; outline: none; cursor: pointer; }
-
-    /* Container Wrapper */
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 15px; text-align: center; }
-
-    /* Hero Section */
-    .hero { padding: 35px 0 20px 0; }
-    .status-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(39, 174, 96, 0.15);
-      border: 1px solid rgba(39, 174, 96, 0.4);
-      color: #2ecc71;
-      padding: 6px 16px;
-      border-radius: 30px;
-      font-size: 12px;
-      font-weight: 700;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-    }
-    .pulse-dot { width: 8px; height: 8px; background: #2ecc71; border-radius: 50%; box-shadow: 0 0 10px #2ecc71; }
-    
-    h1 { font-size: 38px; font-weight: 900; line-height: 1.2; margin-bottom: 16px; }
-    h1 span { background: linear-gradient(90deg, #ff9f43, #ff5252); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    p.hero-subtitle { color: #a0aec0; font-size: 16px; max-width: 620px; margin: 0 auto 25px auto; }
-
-    /* Moving Banner / Marquee */
-    .marquee-container {
-      overflow: hidden;
-      white-space: nowrap;
-      position: relative;
-      margin: 25px 0 45px 0;
-      background: rgba(255,255,255,0.03);
-      padding: 18px 0;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .marquee-content {
-      display: inline-flex;
-      align-items: center;
-      gap: 20px;
-      animation: marquee 25s linear infinite;
-    }
-    .marquee-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 14px;
-      font-weight: 800;
-      color: #fff;
-      background: #151922;
-      padding: 10px 20px;
-      border-radius: 30px;
-      border: 1px solid rgba(255,255,255,0.12);
-      box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-    }
-    .marquee-badge.netflix { border-color: #E50914; color: #ff4d4f; }
-    .marquee-badge.prime { border-color: #00A8E1; color: #38bdf8; }
-    .marquee-badge.bein { border-color: #8b5cf6; color: #c084fc; }
-    .marquee-badge.shahid { border-color: #f97316; color: #fb923c; }
-    .marquee-badge.sport { border-color: #22c55e; color: #4ade80; }
-    
-    @keyframes marquee {
-      0% { transform: translateX(0%); }
-      100% { transform: translateX(-50%); }
-    }
-
-    /* Section Headers */
-    .section-title { font-size: 26px; font-weight: 800; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px; }
-    .section-subtitle { color: #94a3b8; font-size: 15px; margin-bottom: 35px; }
-
-    /* Pricing Section */
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-      margin-bottom: 50px;
-    }
-    .plan-card {
-      background: #12151e;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 20px;
-      padding: 30px 20px;
-      position: relative;
-      transition: transform 0.25s ease, border-color 0.25s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-    }
-    .plan-card:hover { transform: translateY(-6px); border-color: #ff9f43; }
-    .plan-card.featured {
-      border: 2px solid #ff9f43;
-      background: linear-gradient(180deg, rgba(255, 159, 67, 0.12) 0%, #12151e 100%);
-      box-shadow: 0 15px 35px rgba(255, 159, 67, 0.2);
-    }
-    .badge-popular {
-      position: absolute;
-      top: -12px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: linear-gradient(90deg, #ff9f43, #ff5252);
-      color: #fff;
-      font-size: 11px;
-      font-weight: 800;
-      padding: 4px 14px;
-      border-radius: 20px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    
-    .plan-name { font-size: 20px; font-weight: 800; margin-bottom: 10px; }
-    .plan-price { font-size: 34px; font-weight: 900; color: #ff9f43; margin-bottom: 15px; }
-    .plan-price span { font-size: 14px; color: #94a3b8; font-weight: 400; }
-    
-    .plan-list { list-style: none; text-align: left; font-size: 13px; color: #cbd5e0; margin-bottom: 25px; }
-    .plan-list li { padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; align-items: center; gap: 8px; }
-    .plan-list li span.check { color: #2ecc71; font-weight: bold; }
-
-    .btn-plan {
-      display: block;
-      width: 100%;
-      padding: 14px;
-      border-radius: 12px;
-      background: rgba(255,255,255,0.08);
-      color: #fff;
-      font-weight: 700;
-      font-size: 14px;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.1s;
-    }
-    .btn-plan.highlight { background: linear-gradient(90deg, #ff9f43, #ff5252); color: #fff; }
-
-    /* Reseller Section Styling */
-    .reseller-box {
-      background: linear-gradient(180deg, rgba(255, 75, 43, 0.08) 0%, #12151e 100%);
-      border: 1px solid rgba(255, 75, 43, 0.25);
-      border-radius: 20px;
-      padding: 35px 20px;
-      margin-bottom: 50px;
-    }
-
-    /* Customer Reviews Section */
-    .reviews-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
-      margin-bottom: 50px;
-      text-align: left;
-    }
-    .review-card {
-      background: #12151e;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 16px;
-      padding: 22px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    }
-    .stars { color: #ffc107; font-size: 15px; margin-bottom: 10px; }
-    .review-text { font-size: 13px; color: #cbd5e0; margin-bottom: 14px; line-height: 1.5; }
-    .reviewer-name { font-size: 14px; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 6px; }
-    .verified-badge { background: rgba(37, 211, 102, 0.15); color: #25d366; font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 600; }
-
-    /* Accepted Payments Section */
-    .payment-section {
-      background: #12151e;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 18px;
-      padding: 25px;
-      margin-bottom: 50px;
-    }
-    .payment-icons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-top: 15px;
-    }
-    .pay-badge {
-      background: #1a1e2b;
-      border: 1px solid rgba(255,255,255,0.1);
-      padding: 10px 18px;
-      border-radius: 12px;
-      font-size: 13px;
-      font-weight: 800;
-      color: #cbd5e0;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    /* FAQ Section */
-    .faq-container { max-width: 720px; margin: 0 auto 50px auto; text-align: left; }
-    .faq-item { background: #12151e; border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; margin-bottom: 12px; overflow: hidden; }
-    .faq-question { padding: 18px; font-size: 15px; font-weight: 700; color: #ff9f43; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
-    .faq-answer { padding: 0 18px 18px 18px; font-size: 14px; color: #94a3b8; display: none; line-height: 1.6; }
-    .faq-item.active .faq-answer { display: block; }
-
-    /* Floating WhatsApp CTA */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25d366;
-      color: #fff;
-      border-radius: 50px;
-      padding: 12px 22px;
-      font-weight: 800;
-      font-size: 14px;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
-      z-index: 1000;
-      transition: transform 0.2s;
-    }
-    .whatsapp-float:active { transform: scale(0.95); }
-
-    /* Footer */
-    footer { border-top: 1px solid rgba(255,255,255,0.06); padding: 30px 0; font-size: 13px; color: #64748b; }
-  </style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"STREAMMAX",
+  "url":"https://streammax-vip.com/",
+  "inLanguage":["en","ar"]
+}
+</script>
 </head>
+
 <body>
+<div class="ticker" data-i18n="ticker">STREAMMAX • Check current availability and pricing before ordering</div>
 
-  <!-- Top Announcement -->
-  <div class="ticker-bar" data-en="⚡ SPECIAL OFFER: FREE 24-HOUR TRIAL AVAILABLE NOW!" data-ar="⚡ عرض خاص: تجربة مجانية لمدة 24 ساعة متوفرة الآن!">
-    ⚡ SPECIAL OFFER: FREE 24-HOUR TRIAL AVAILABLE NOW!
+<div class="nav-wrap">
+<nav class="navbar" aria-label="Main navigation">
+  <a class="brand" href="#" aria-label="STREAMMAX home">STREAM<span>MAX</span></a>
+  <div class="nav-controls">
+    <div class="dropdown" id="navDropdown">
+      <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="navMenu"><span data-i18n="menu">Menu ☰</span></button>
+      <div class="dropdown-content" id="navMenu">
+        <a href="#plans" data-i18n="navPlans">Subscription options</a>
+        <a href="#reseller" data-i18n="navReseller">Reseller information</a>
+        <a href="#devices" data-i18n="navDevices">Devices & setup</a>
+        <a href="#faq" data-i18n="navFaq">FAQs</a>
+        <a href="#contact" data-i18n="navContact">Contact</a>
+      </div>
+    </div>
+    <label class="sr-only" for="currencySelect" data-i18n="currencyLabel">Display currency</label>
+    <select class="select" id="currencySelect" aria-label="Display currency">
+      <option value="GBP">GBP (£)</option>
+      <option value="USD">USD ($)</option>
+      <option value="EUR">EUR (€)</option>
+    </select>
+    <label class="sr-only" for="langSelect" data-i18n="languageLabel">Language</label>
+    <select class="select" id="langSelect" aria-label="Language">
+      <option value="en">English</option>
+      <option value="ar">العربية</option>
+    </select>
   </div>
+</nav>
+</div>
 
-  <!-- Navbar -->
-  <div class="navbar">
-    <div class="brand">STREAM<span>MAX</span></div>
-    
-    <div class="nav-controls">
-      <!-- Dropdown Menu -->
-      <div class="dropdown" id="navDropdown">
-        <button class="dropdown-btn" onclick="toggleDropdown()">
-          <span data-en="Menu ☰" data-ar="القائمة ☰">Menu ☰</span>
-        </button>
-        <div class="dropdown-content">
-          <a href="#plans" onclick="closeDropdown()" data-en="💳 Retail Subscriptions" data-ar="💳 اشتراكات الأفراد">💳 Retail Subscriptions</a>
-          <a href="#reseller" onclick="closeDropdown()" data-en="💼 Become a Reseller" data-ar="💼 لوحات الموزعين">💼 Become a Reseller</a>
-          <a href="#reviews" onclick="closeDropdown()" data-en="⭐️ Reviews" data-ar="⭐️ آراء العملاء">⭐️ Reviews</a>
-          <a href="#faq" onclick="closeDropdown()" data-en="❓ FAQs" data-ar="❓ الأسئلة الشائعة">❓ FAQs</a>
-          <a href="https://wa.me/447717095439?text=Hello!%20I%20want%20a%20FREE%2024h%20Trial." data-en="🚀 Free Trial" data-ar="🚀 تجربة مجانية">🚀 Free Trial</a>
-        </div>
-      </div>
-
-      <select class="select-box" id="currencySelect">
-        <option value="GBP">GBP (£)</option>
-        <option value="USD">USD ($)</option>
-        <option value="EUR">EUR (€)</option>
-      </select>
-      <select class="select-box" id="langSelect" onchange="switchLanguage()">
-        <option value="en">English</option>
-        <option value="ar">العربية</option>
-      </select>
-    </div>
+<main>
+<div class="container">
+<header class="hero">
+  <div class="status"><span class="dot" aria-hidden="true"></span><span data-i18n="status">Plans and support information</span></div>
+  <h1><span data-i18n="heroLine1">Streaming options.</span><br><span data-i18n="heroLine2">Clear plans. Helpful support.</span></h1>
+  <p class="subtitle" data-i18n="heroDesc">Explore available subscription options, supported devices and setup guidance. Contact us to confirm current service availability, content rights, pricing and terms before ordering.</p>
+  <div class="hero-actions">
+    <a class="btn btn-primary" href="#plans" data-i18n="viewPlans">View plans</a>
+    <a class="btn btn-whatsapp" href="https://wa.me/447717095439?text=Hello%20STREAMMAX%2C%20I%27d%20like%20to%20ask%20about%20your%20services." target="_blank" rel="noopener noreferrer" data-i18n="contactWhatsapp">Contact on WhatsApp</a>
   </div>
+  <div class="feature-strip" aria-label="Service highlights">
+    <div class="feature" data-i18n="feature1">📱 Multiple device types</div>
+    <div class="feature" data-i18n="feature2">🧭 Setup guidance</div>
+    <div class="feature" data-i18n="feature3">💬 WhatsApp enquiries</div>
+  </div>
+</header>
 
-  <div class="container">
-    
-    <!-- Hero Section -->
-    <div class="hero">
-      <div class="status-badge">
-        <div class="pulse-dot"></div>
-        <span data-en="99.9% Uptime Guaranteed" data-ar="ضمان استقرار بنسبة 99.9%">99.9% Uptime Guaranteed</span>
-      </div>
-      <h1 id="heroTitle">Ultra HD 4K Streaming.<br><span>18,000+ Live Channels</span></h1>
-      <p class="hero-subtitle" id="heroDesc">Enjoy non-stop sports, movies, series, and live TV on your Smart TV, Firestick, Apple TV, or mobile devices with zero freezing technology.</p>
+<section id="plans">
+  <div class="section-heading">
+    <h2 data-i18n="plansTitle">Subscription options</h2>
+    <p data-i18n="plansDesc">Choose a duration to discuss. Confirm the exact features, supported content, renewal terms and final price with support before paying.</p>
+  </div>
+  <div class="pricing-grid">
+    <article class="plan-card">
+      <div class="plan-name" data-i18n="oneMonth">1 Month</div>
+      <div class="price" data-price-gbp="9.99">£9.99</div>
+      <div class="price-note" data-i18n="oneMonthNote">One-month duration</div>
+      <ul class="plan-list">
+        <li><span class="check">✓</span><span data-i18n="confirmFeatures">Confirm included features before purchase</span></li>
+        <li><span class="check">✓</span><span data-i18n="deviceHelp">Device and setup guidance</span></li>
+        <li><span class="check">✓</span><span data-i18n="supportEnquiry">Support via WhatsApp enquiry</span></li>
+      </ul>
+      <a class="btn" href="https://wa.me/447717095439?text=Hello%20STREAMMAX%2C%20please%20confirm%20the%201-month%20plan%20features%2C%20availability%20and%20final%20price." target="_blank" rel="noopener noreferrer" data-i18n="askAboutPlan">Ask about this plan</a>
+    </article>
+
+    <article class="plan-card">
+      <div class="plan-name" data-i18n="threeMonths">3 Months</div>
+      <div class="price" data-price-gbp="19.99">£19.99</div>
+      <div class="price-note" data-i18n="threeMonthNote">Three-month duration</div>
+      <ul class="plan-list">
+        <li><span class="check">✓</span><span data-i18n="confirmFeatures">Confirm included features before purchase</span></li>
+        <li><span class="check">✓</span><span data-i18n="deviceHelp">Device and setup guidance</span></li>
+        <li><span class="check">✓</span><span data-i18n="supportEnquiry">Support via WhatsApp enquiry</span></li>
+      </ul>
+      <a class="btn" href="https://wa.me/447717095439?text=Hello%20STREAMMAX%2C%20please%20confirm%20the%203-month%20plan%20features%2C%20availability%20and%20final%20price." target="_blank" rel="noopener noreferrer" data-i18n="askAboutPlan">Ask about this plan</a>
+    </article>
+
+    <article class="plan-card featured">
+      <div class="popular" data-i18n="popular">Popular option</div>
+      <div class="plan-name" data-i18n="twelveMonths">12 Months</div>
+      <div class="price" data-price-gbp="44.99">£44.99</div>
+      <div class="price-note" data-i18n="twelveMonthNote">Twelve-month duration</div>
+      <ul class="plan-list">
+        <li><span class="check">✓</span><span data-i18n="confirmFeatures">Confirm included features before purchase</span></li>
+        <li><span class="check">✓</span><span data-i18n="deviceHelp">Device and setup guidance</span></li>
+        <li><span class="check">✓</span><span data-i18n="supportEnquiry">Support via WhatsApp enquiry</span></li>
+      </ul>
+      <a class="btn btn-primary" href="https://wa.me/447717095439?text=Hello%20STREAMMAX%2C%20please%20confirm%20the%2012-month%20plan%20features%2C%20availability%20and%20final%20price." target="_blank" rel="noopener noreferrer" data-i18n="askAboutPlan">Ask about this plan</a>
+    </article>
+  </div>
+  <p class="conversion-note" id="currencyNote" data-i18n="currencyNote">Prices shown in currencies other than GBP are indicative conversions using built-in reference rates, not live exchange rates. Confirm the final amount before paying.</p>
+</section>
+
+<section id="reseller">
+  <div class="reseller-box">
+    <div class="section-heading">
+      <h2 data-i18n="resellerTitle">Reseller information</h2>
+      <p data-i18n="resellerDesc">Interested in a reseller arrangement? Contact us to verify authorisation, the panel provider, permitted content, service terms and any ongoing costs before purchasing.</p>
     </div>
-
-    <!-- Moving Dynamic Badges Marquee -->
-    <div class="marquee-container">
-      <div class="marquee-content">
-        <div class="marquee-badge netflix">🔴 NETFLIX 4K VOD</div>
-        <div class="marquee-badge prime">📦 PRIME VIDEO</div>
-        <div class="marquee-badge bein">🟣 beIN SPORTS VIP</div>
-        <div class="marquee-badge shahid">🟠 SHAHID VIP</div>
-        <div class="marquee-badge sport">⚽ PREMIER LEAGUE 4K</div>
-        <div class="marquee-badge">📺 SMART TV & FIRESTICK</div>
-        <div class="marquee-badge">🏆 CHAMPIONS LEAGUE</div>
-        
-        <!-- Duplicated for continuous animation -->
-        <div class="marquee-badge netflix">🔴 NETFLIX 4K VOD</div>
-        <div class="marquee-badge prime">📦 PRIME VIDEO</div>
-        <div class="marquee-badge bein">🟣 beIN SPORTS VIP</div>
-        <div class="marquee-badge shahid">🟠 SHAHID VIP</div>
-        <div class="marquee-badge sport">⚽ PREMIER LEAGUE 4K</div>
-        <div class="marquee-badge">📺 SMART TV & FIRESTICK</div>
-        <div class="marquee-badge">🏆 CHAMPIONS LEAGUE</div>
-      </div>
-    </div>
-
-    <!-- Retail Subscriptions Section -->
-    <div id="plans"></div>
-    <div class="section-title" data-en="Retail Pricing Plans" data-ar="باقات الاشتراكات الفردية">Retail Pricing Plans</div>
-    <div class="section-subtitle" data-en="Choose your package and start streaming instantly" data-ar="اختر باقتك وابدأ المشاهدة فوراً">Choose your package and start streaming instantly</div>
-
     <div class="pricing-grid">
-      <!-- 1 Month -->
-      <div class="plan-card">
-        <div class="plan-name" data-en="1 Month VIP" data-ar="شهر واحد VIP">1 Month VIP</div>
-        <div class="plan-price">£9.99 <span>/1 mo</span></div>
+      <article class="plan-card">
+        <div class="plan-name" data-i18n="starterPanel">Starter panel · 50 credits</div>
+        <div class="price" data-price-gbp="120">£120.00</div>
+        <div class="price-note" data-i18n="oneTimeIndicative">Advertised one-time price; confirm terms</div>
         <ul class="plan-list">
-          <li><span class="check">✓</span> <span data-en="18,000+ Channels" data-ar="أكثر من 18,000 قناة">18,000+ Channels</span></li>
-          <li><span class="check">✓</span> <span data-en="80,000+ Movies & Series" data-ar="أكثر من 80,000 فيلم ومسلسل">80,000+ Movies & Series</span></li>
-          <li><span class="check">✓</span> <span data-en="4K & Ultra HD Quality" data-ar="جودة 4K و Ultra HD">4K & Ultra HD Quality</span></li>
-          <li><span class="check">✓</span> <span data-en="1 Connection" data-ar="جهاز واحد">1 Connection</span></li>
+          <li><span class="check">✓</span><span data-i18n="verifyPanel">Confirm panel provider and access details</span></li>
+          <li><span class="check">✓</span><span data-i18n="verifyRights">Verify distribution rights and permitted use</span></li>
+          <li><span class="check">✓</span><span data-i18n="verifyCosts">Confirm credit expiry and extra costs</span></li>
         </ul>
-        <a href="https://wa.me/447717095439?text=Hello!%20I%20want%20to%20order%20the%201%20Month%20VIP%20Plan%20(£9.99)." class="btn-plan" data-en="Order Now" data-ar="اطلب الآن">Order Now</a>
-      </div>
+        <a class="btn" href="https://wa.me/447717095439?text=Hello%20STREAMMAX%2C%20I%27d%20like%20details%20about%20the%2050-credit%20reseller%20option%2C%20provider%20authorisation%20and%20terms." target="_blank" rel="noopener noreferrer" data-i18n="enquire">Enquire</a>
+      </article>
 
-      <!-- 3 Months -->
-      <div class="plan-card">
-        <div class="plan-name" data-en="3 Months VIP" data-ar="3 أشهر VIP">3 Months VIP</div>
-        <div class="plan-price">£19.99 <span>/3 mo</span></div>
+      <article class="plan-card featured">
+        <div class="popular" data-i18n="resellerOption">Reseller option</div>
+        <div class="plan-name" data-i18n="proPanel">Pro panel · 100 credits</div>
+        <div class="price" data-price-gbp="200">£200.00</div>
+        <div class="price-note" data-i18n="oneTimeIndicative">Advertised one-time price; confirm terms</div>
         <ul class="plan-list">
-          <li><span class="check">✓</span> <span data-en="18,000+ Channels" data-ar="أكثر من 18,000 قناة">18,000+ Channels</span></li>
-          <li><span class="check">✓</span> <span data-en="80,000+ Movies & Series" data-ar="أكثر من 80,000 فيلم ومسلسل">80,000+ Movies & Series</span></li>
-          <li><span class="check">✓</span> <span data-en="Anti-Freeze Tech" data-ar="تقنية عدم التقطيع">Anti-Freeze Tech</span></li>
-          <li><span class="check">✓</span> <span data-en="Free Setup Guide" data-ar="دعم إعداد مجاني">Free Setup Guide</span></li>
+          <li><span class="check">✓</span><span data-i18n="verifyPanel">Confirm panel provider and access details</span></li>
+          <li><span class="check">✓</span><span data-i18n="verifyRights">Verify distribution rights and permitted use</span></li>
+          <li><span class="check">✓</span><span data-i18n="verifyCosts">Confirm credit expiry and extra costs</span></li>
         </ul>
-        <a href="https://wa.me/447717095439?text=Hello!%20I%20want%20to%20order%20the%203%20Months%20VIP%20Plan%20(£19.99)." class="btn-plan" data-en="Order Now" data-ar="اطلب الآن">Order Now</a>
-      </div>
-
-      <!-- 12 Months (Featured) -->
-      <div class="plan-card featured">
-        <div class="badge-popular" data-en="BEST VALUE" data-ar="الأكثر مبيعاً">BEST VALUE</div>
-        <div class="plan-name" data-en="12 Months VIP" data-ar="سنة كاملة VIP">12 Months VIP</div>
-        <div class="plan-price">£44.99 <span>/12 mo</span></div>
-        <ul class="plan-list">
-          <li><span class="check">✓</span> <span data-en="Full Channel & VOD Access" data-ar="وصول كامل للقنوات والأفلام">Full Channel & VOD Access</span></li>
-          <li><span class="check">✓</span> <span data-en="Anti-Freeze 4K Server" data-ar="سيرفر 4K قوي ضد التقطيع">Anti-Freeze 4K Server</span></li>
-          <li><span class="check">✓</span> <span data-en="All Devices Supported" data-ar="يدعم جميع الأجهزة">All Devices Supported</span></li>
-          <li><span class="check">✓</span> <span data-en="24/7 Priority VIP Support" data-ar="دعم فني VIP طوال اليوم">24/7 Priority VIP Support</span></li>
-        </ul>
-        <a href="https://wa.me/447717095439?text=Hello!%20I%20want%20to%20order%20the%2012%20Months%20VIP%20Plan%20(£44.99)." class="btn-plan highlight" data-en="Order Now" data-ar="اطلب الآن">Order Now</a>
-      </div>
+        <a class="btn btn-primary" href="https://wa.me/447717095439?text=Hello%20STREAMMAX%2C%20I%27d%20like%20details%20about%20the%20100-credit%20reseller%20option%2C%20provider%20authorisation%20and%20terms." target="_blank" rel="noopener noreferrer" data-i18n="enquire">Enquire</a>
+      </article>
     </div>
-
-    <!-- Become a Reseller Section -->
-    <div id="reseller"></div>
-    <div class="reseller-box">
-      <div class="section-title" data-en="💼 Become a STREAMMAX Reseller" data-ar="💼 كن موزعاً مع STREAMMAX">💼 Become a STREAMMAX Reseller</div>
-      <div class="section-subtitle" data-en="Start your own streaming business with high-profit margins and your own IPTV panel dashboard." data-ar="ابدأ عملك الخاص واربح عبر بيع الاشتراكات مع لوحة تحكم خاصة بك.">Start your own streaming business with high-profit margins and your own IPTV panel dashboard.</div>
-
-      <div class="pricing-grid" style="margin-bottom: 0;">
-        <!-- Starter Panel -->
-        <div class="plan-card">
-          <div class="plan-name" data-en="50 Credits Panel" data-ar="لوحة 50 نقطة">50 Credits Panel</div>
-          <div class="plan-price">£120 <span>/one-time</span></div>
-          <ul class="plan-list">
-            <li><span class="check">✓</span> <span data-en="Full Admin Dashboard" data-ar="لوحة موزع كاملة">Full Admin Dashboard</span></li>
-            <li><span class="check">✓</span> <span data-en="Unlimited Free 24h Trials" data-ar="تجارب مجانية غير محدودة">Unlimited Free 24h Trials</span></li>
-            <li><span class="check">✓</span> <span data-en="Create M3U & Xtream Lines" data-ar="إنشاء روابط M3U و Xtream">Create M3U & Xtream Lines</span></li>
-            <li><span class="check">✓</span> <span data-en="24/7 Technical Panel Support" data-ar="دعم تقني للوحة 24/7">24/7 Technical Panel Support</span></li>
-          </ul>
-          <a href="https://wa.me/447717095439?text=Hello!%20I%20want%20to%20buy%20the%2050%20Credits%20Reseller%20Panel%20(£120)." class="btn-plan" data-en="Buy Panel" data-ar="شراء اللوحة">Buy Panel</a>
-        </div>
-
-        <!-- Pro Panel -->
-        <div class="plan-card featured">
-          <div class="badge-popular" data-en="MOST POPULAR" data-ar="الأكثر طلباً">MOST POPULAR</div>
-          <div class="plan-name" data-en="100 Credits Panel" data-ar="لوحة 100 نقطة">100 Credits Panel</div>
-          <div class="plan-price">£200 <span>/one-time</span></div>
-          <ul class="plan-list">
-            <li><span class="check">✓</span> <span data-en="Lowest Per-Credit Cost" data-ar="أقل تكلفة للنقطة">Lowest Per-Credit Cost</span></li>
-            <li><span class="check">✓</span> <span data-en="Unlimited Free 24h Trials" data-ar="تجارب مجانية غير محدودة">Unlimited Free 24h Trials</span></li>
-            <li><span class="check">✓</span> <span data-en="Sub-Reseller Creation Enabled" data-ar="إمكانية إضافة موزعين فرعيين">Sub-Reseller Creation Enabled</span></li>
-            <li><span class="check">✓</span> <span data-en="100% Anti-Freeze Server" data-ar="سيرفر قوي ضد التقطيع">100% Anti-Freeze Server</span></li>
-          </ul>
-          <a href="https://wa.me/447717095439?text=Hello!%20I%20want%20to%20buy%20the%20100%20Credits%20Reseller%20Panel%20(£200)." class="btn-plan highlight" data-en="Buy Panel" data-ar="شراء اللوحة">Buy Panel</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Customer Reviews Section -->
-    <div id="reviews"></div>
-    <div class="section-title" data-en="What Our Customers Say" data-ar="آراء العملاء">What Our Customers Say</div>
-    <div class="section-subtitle" data-en="Over 12,500+ satisfied subscribers worldwide" data-ar="أكثر من 12,500 مشترك راضٍ حول العالم">Over 12,500+ satisfied subscribers worldwide</div>
-
-    <div class="reviews-grid">
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p class="review-text" data-en="“Incredible server quality! Watched the whole Premier League match weekend in 4K with zero freezing on my Firestick.”" data-ar="“جودة سيرفر ممتازة جداً! تابعت جميع مباريات الدوري الإنجليزي بجودة 4K وبدون أي تقطيع.”">“Incredible server quality! Watched the whole Premier League match weekend in 4K with zero freezing on my Firestick.”</p>
-        <div class="reviewer-name">James K. <span class="verified-badge">✓ Verified User</span></div>
-      </div>
-
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p class="review-text" data-en="“Instant setup via WhatsApp. I got my trial within 2 minutes and subscribed for 12 months immediately.”" data-ar="“تفعيل فوري عبر الواتساب. استلمت التجربة في دقيقتين واشتركت لمدة سنة مباشرة.”">“Instant setup via WhatsApp. I got my trial within 2 minutes and subscribed for 12 months immediately.”</p>
-        <div class="reviewer-name">Tariq M. <span class="verified-badge">✓ Verified User</span></div>
-      </div>
-
-      <div class="review-card">
-        <div class="stars">★★★★★</div>
-        <p class="review-text" data-en="“Huge cinema library with latest 2026 movies and Shahid VIP shows in full HD. Highly recommended!”" data-ar="“مكتبة أفلام وضخمة جداً تحتوي على أحدث أفلام 2026 ومسلسلات شاهد بجودة عالية.”">“Huge cinema library with latest movies and Shahid VIP shows in full HD. Highly recommended!”</p>
-        <div class="reviewer-name">David L. <span class="verified-badge">✓ Verified User</span></div>
-      </div>
-    </div>
-
-    <!-- Accepted Payment Methods -->
-    <div class="payment-section">
-      <div class="section-title" style="font-size: 18px; margin-bottom: 5px;" data-en="Accepted Secure Payments" data-ar="طرق الدفع الآمنة المقبولة">Accepted Secure Payments</div>
-      <div class="payment-icons">
-        <div class="pay-badge">💳 PayPal</div>
-        <div class="pay-badge">💳 VISA</div>
-        <div class="pay-badge">💳 Mastercard</div>
-        <div class="pay-badge">🏦 Bank Transfer</div>
-        <div class="pay-badge">⚡ Revolut</div>
-      </div>
-    </div>
-
-    <!-- FAQ Accordion Section -->
-    <div id="faq"></div>
-    <div class="faq-container">
-      <div class="section-title" style="text-align: center; margin-bottom: 20px;" data-en="Frequently Asked Questions" data-ar="الأسئلة الشائعة">Frequently Asked Questions</div>
-      
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-question"><span data-en="⚡ How fast do I get my activation?" data-ar="⚡ ما السرعة التي أحصل بها على التفعيل؟">⚡ How fast do I get my activation?</span> <span>+</span></div>
-        <div class="faq-answer" data-en="Activations are processed within 2 minutes after payment! You will receive your credentials right in WhatsApp." data-ar="يتم التفعيل في أقل من دقيقتين بعد الدفع! ستستلم البيانات مباشرة عبر واتساب.">Activations are processed within 2 minutes after payment! You will receive your credentials right in WhatsApp.</div>
-      </div>
-
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-question"><span data-en="📺 What devices are supported?" data-ar="📺 ما هي الأجهزة المدعومة؟">📺 What devices are supported?</span> <span>+</span></div>
-        <div class="faq-answer" data-en="StreamMax works on Smart TVs (Samsung, LG, Android TV), Amazon Firestick, Apple TV, iPhones, Android phones, and PC." data-ar="يعمل StreamMax على الشاشات الذكية (سامسونج، LG، أندرويد TV)، أمازون فايرستيك، أبل TV، والهواتف.">StreamMax works on Smart TVs (Samsung, LG, Android TV), Amazon Firestick, Apple TV, iPhones, Android phones, and PC.</div>
-      </div>
-
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-question"><span data-en="💼 How does the reseller panel work?" data-ar="💼 كيف تعمل لوحة الموزعين؟">💼 How does the reseller panel work?</span> <span>+</span></div>
-        <div class="faq-answer" data-en="When you purchase credits, you receive a web panel login. You can generate unlimited free trials and activate 1-month, 3-month, or 12-month subscriptions instantly for your own clients." data-ar="عند شراء النقاط، تستلم حساباً للوحة التحكم. يمكنك إنشاء تجارب مجانية وتفعيل اشتراكات لعملائك فوراً.">When you purchase credits, you receive a web panel login. You can generate unlimited free trials and activate 1-month, 3-month, or 12-month subscriptions instantly for your own clients.</div>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-      STREAMMAX &copy; 2026. All rights reserved. Ultra Fast IPTV Streaming Platform.
-    </footer>
-
+    <div class="notice" data-i18n="resellerNotice">Do not resell channels, films or series unless you have the required rights and written permission. Check local laws and the provider's terms before committing funds.</div>
   </div>
+</section>
 
-  <!-- Floating WhatsApp Quick Button -->
-  <a href="https://wa.me/447717095439?text=Hello!%20I%20want%20a%20FREE%2024h%20Trial%20for%20StreamMax." class="whatsapp-float">
-    <span>💬</span> <span data-en="Get Free Trial" data-ar="احصل على تجربة مجانية">Get Free Trial</span>
-  </a>
+<section id="devices">
+  <div class="section-heading">
+    <h2 data-i18n="devicesTitle">Devices & setup</h2>
+    <p data-i18n="devicesDesc">Compatibility depends on the specific app, device and authorised service. Ask support to confirm your setup before you order.</p>
+  </div>
+  <div class="two-col">
+    <article class="info-card">
+      <h3 data-i18n="deviceTypesTitle">Common device types</h3>
+      <p data-i18n="deviceTypesText">Smart TVs, Android TV devices, Amazon Fire TV devices, Apple devices, Android phones, tablets and computers may support compatible streaming apps.</p>
+    </article>
+    <article class="info-card">
+      <h3 data-i18n="setupTitle">Setup help</h3>
+      <p data-i18n="setupText">Tell us your device model and app name. Never send payment card details, account passwords or one-time security codes through chat.</p>
+    </article>
+  </div>
+</section>
 
-  <!-- Script for Dropdown, FAQ, and Language Switcher -->
-  <script>
-    function toggleDropdown() {
-      document.getElementById('navDropdown').classList.toggle('active');
-    }
+<section id="faq">
+  <div class="section-heading">
+    <h2 data-i18n="faqTitle">Frequently asked questions</h2>
+    <p data-i18n="faqDesc">Read the basics before contacting support.</p>
+  </div>
+  <div class="faq">
+    <details>
+      <summary data-i18n="faq1q">How do I confirm a plan?</summary>
+      <div class="answer" data-i18n="faq1a">Use the enquiry button for the duration you want. Ask for the exact features, supported content, total price, payment method, renewal terms and refund policy in writing before paying.</div>
+    </details>
+    <details>
+      <summary data-i18n="faq2q">Which devices are supported?</summary>
+      <div class="answer" data-i18n="faq2a">Support depends on the authorised service and compatible app. Send the model of your TV, streaming device or phone to confirm compatibility.</div>
+    </details>
+    <details>
+      <summary data-i18n="faq3q">How does the reseller option work?</summary>
+      <div class="answer" data-i18n="faq3a">Ask for written information about the provider, panel access, credit rules, permitted content, support, additional charges and proof of distribution authorisation. Do not purchase until you understand the terms.</div>
+    </details>
+    <details>
+      <summary data-i18n="faq4q">What is your refund policy?</summary>
+      <div class="answer" data-i18n="faq4a">Request the current written refund and cancellation terms before making a payment. Any policy must comply with the laws that apply to the sale.</div>
+    </details>
+    <details>
+      <summary data-i18n="faq5q">Are currency conversions live?</summary>
+      <div class="answer" data-i18n="faq5a">No. Converted prices are estimates using reference rates built into this page. The final price and currency must be confirmed before payment.</div>
+    </details>
+  </div>
+</section>
 
-    function closeDropdown() {
-      document.getElementById('navDropdown').classList.remove('active');
-    }
+<section id="contact">
+  <div class="section-heading">
+    <h2 data-i18n="contactTitle">Contact STREAMMAX</h2>
+    <p data-i18n="contactDesc">Ask about current availability, authorised content, device compatibility, terms and payment options before you place an order.</p>
+  </div>
+  <div style="text-align:center">
+    <a class="btn btn-whatsapp" href="https://wa.me/447717095439?text=Hello%20STREAMMAX%2C%20I%20have%20a%20question%20about%20your%20service." target="_blank" rel="noopener noreferrer" data-i18n="contactWhatsapp">Contact on WhatsApp</a>
+  </div>
+</section>
+</div>
+</main>
 
-    // Close dropdown when clicking outside
-    window.onclick = function(event) {
-      if (!event.target.matches('.dropdown-btn') && !event.target.parentElement.matches('.dropdown-btn')) {
-        closeDropdown();
-      }
-    }
+<footer>
+<div class="container">
+  <div class="footer-brand">STREAM<span class="accent">MAX</span></div>
+  <p data-i18n="footerLine">© 2026 STREAMMAX. All rights reserved.</p>
+  <div class="legal-links">
+    <button type="button" data-policy="privacy" data-i18n="privacyLink">Privacy notice</button>
+    <button type="button" data-policy="terms" data-i18n="termsLink">Terms of service</button>
+    <button type="button" data-policy="refund" data-i18n="refundLink">Refund & cancellation</button>
+  </div>
+  <p data-i18n="footerNote">Replace these general policy summaries with your accurate business details and have them reviewed for the laws that apply to you.</p>
+</div>
+</footer>
 
-    function toggleFaq(element) {
-      element.classList.toggle('active');
-    }
+<div class="floating-cta">
+<a class="btn btn-whatsapp" href="https://wa.me/447717095439?text=Hello%20STREAMMAX%2C%20I%27d%20like%20to%20ask%20about%20your%20services." target="_blank" rel="noopener noreferrer"><span aria-hidden="true">💬</span><span data-i18n="quickContact">Chat with us</span></a>
+</div>
 
-    function switchLanguage() {
-      const lang = document.getElementById('langSelect').value;
-      const htmlTag = document.documentElement;
-      
-      if (lang === 'ar') {
-        htmlTag.setAttribute('dir', 'rtl');
+<div class="modal" id="policyModal" role="dialog" aria-modal="true" aria-labelledby="policyTitle">
+  <div class="modal-panel">
+    <div class="modal-top">
+      <h2 id="policyTitle">Policy information</h2>
+      <button class="close-modal" id="closeModal" type="button" data-i18n="close">Close ✕</button>
+    </div>
+    <div id="policyBody"></div>
+    <p class="notice" data-i18n="policyPlaceholder">Important: this is a starter template, not legal advice. Add your real business identity, contact details, data practices and legally compliant terms before relying on it.</p>
+  </div>
+</div>
+
+<script>
+(() => {
+"use strict";
+
+const translations = {
+en: {
+ticker:"STREAMMAX • Check current availability and pricing before ordering",
+menu:"Menu ☰",navPlans:"Subscription options",navReseller:"Reseller information",
+navDevices:"Devices & setup",navFaq:"FAQs",navContact:"Contact",
+currencyLabel:"Display currency",languageLabel:"Language",
+status:"Plans and support information",
+heroLine1:"Streaming options.",heroLine2:"Clear plans. Helpful support.",
+heroDesc:"Explore available subscription options, supported devices and setup guidance. Contact us to confirm current service availability, content rights, pricing and terms before ordering.",
+viewPlans:"View plans",contactWhatsapp:"Contact on WhatsApp",
+feature1:"📱 Multiple device types",feature2:"🧭 Setup guidance",feature3:"💬 WhatsApp enquiries",
+plansTitle:"Subscription options",
+plansDesc:"Choose a duration to discuss. Confirm the exact features, supported content, renewal terms and final price with support before paying.",
+oneMonth:"1 Month",oneMonthNote:"One-month duration",
+threeMonths:"3 Months",threeMonthNote:"Three-month duration",
+twelveMonths:"12 Months",twelveMonthNote:"Twelve-month duration",
+popular:"Popular option",confirmFeatures:"Confirm included features before purchase",
+deviceHelp:"Device and setup guidance",supportEnquiry:"Support via WhatsApp enquiry",
+askAboutPlan:"Ask about this plan",
+currencyNote:"Prices shown in currencies other than GBP are indicative conversions using built-in reference rates, not live exchange rates. Confirm the final amount before paying.",
+resellerTitle:"Reseller information",
+resellerDesc:"Interested in a reseller arrangement? Contact us to verify authorisation, the panel provider, permitted content, service terms and any ongoing costs before purchasing.",
+starterPanel:"Starter panel · 50 credits",proPanel:"Pro panel · 100 credits",
+oneTimeIndicative:"Advertised one-time price; confirm terms",
+verifyPanel:"Confirm panel provider and access details",
+verifyRights:"Verify distribution rights and permitted use",
+verifyCosts:"Confirm credit expiry and extra costs",enquire:"Enquire",
+resellerOption:"Reseller option",
+resellerNotice:"Do not resell channels, films or series unless you have the required rights and written permission. Check local laws and the provider's terms before committing funds.",
+devicesTitle:"Devices & setup",
+devicesDesc:"Compatibility depends on the specific app, device and authorised service. Ask support to confirm your setup before you order.",
+deviceTypesTitle:"Common device types",
+deviceTypesText:"Smart TVs, Android TV devices, Amazon Fire TV devices, Apple devices, Android phones, tablets and computers may support compatible streaming apps.",
+setupTitle:"Setup help",
+setupText:"Tell us your device model and app name. Never send payment card details, account passwords or one-time security codes through chat.",
+faqTitle:"Frequently asked questions",faqDesc:"Read the basics before contacting support.",
+faq1q:"How do I confirm a plan?",
+faq1a:"Use the enquiry button for the duration you want. Ask for the exact features, supported content, total price, payment method, renewal terms and refund policy in writing before paying.",
+faq2q:"Which devices are supported?",
+faq2a:"Support depends on the authorised service and compatible app. Send the model of your TV, streaming device or phone to confirm compatibility.",
+faq3q:"How does the reseller option work?",
+faq3a:"Ask for written information about the provider, panel access, credit rules, permitted content, support, additional charges and proof of distribution authorisation. Do not purchase until you understand the terms.",
+faq4q:"What is your refund policy?",
+faq4a:"Request the current written refund and cancellation terms before making a payment. Any policy must comply with the laws that apply to the sale.",
+faq5q:"Are currency conversions live?",
+faq5a:"No. Converted prices are estimates using reference rates built into this page. The final price and currency must be confirmed before payment.",
+contactTitle:"Contact STREAMMAX",
+contactDesc:"Ask about current availability, authorised content, device compatibility, terms and payment options before you place an order.",
+footerLine:"© {year} STREAMMAX. All rights reserved.",
+privacyLink:"Privacy notice",termsLink:"Terms of service",
+refundLink:"Refund & cancellation",
+footerNote:"Replace these general policy summaries with your accurate business details and have them reviewed for the laws that apply to you.",
+quickContact:"Chat with us",close:"Close ✕",
+policyPlaceholder:"Important: this is a starter template, not legal advice. Add your real business identity, contact details, data practices and legally compliant terms before relying on it."
+},
+ar: {
+ticker:"STREAMMAX • يرجى التأكد من التوفر والأسعار الحالية قبل الطلب",
+menu:"القائمة ☰",navPlans:"خيارات الاشتراك",navReseller:"معلومات الموزعين",
+navDevices:"الأجهزة والإعداد",navFaq:"الأسئلة الشائعة",navContact:"اتصل بنا",
+currencyLabel:"العملة المعروضة",languageLabel:"اللغة",
+status:"معلومات الباقات والدعم",
+heroLine1:"خيارات للمشاهدة.",heroLine2:"باقات واضحة ودعم للمساعدة.",
+heroDesc:"تعرّف على خيارات الاشتراك والأجهزة المتوافقة وإرشادات الإعداد. تواصل معنا لتأكيد توفر الخدمة وحقوق المحتوى والأسعار والشروط قبل الطلب.",
+viewPlans:"عرض الباقات",contactWhatsapp:"تواصل عبر واتساب",
+feature1:"📱 أنواع متعددة من الأجهزة",feature2:"🧭 إرشادات الإعداد",feature3:"💬 الاستفسار عبر واتساب",
+plansTitle:"خيارات الاشتراك",
+plansDesc:"اختر المدة التي تريد الاستفسار عنها. تأكد من المزايا والمحتوى المدعوم وشروط التجديد والسعر النهائي مع الدعم قبل الدفع.",
+oneMonth:"شهر واحد",oneMonthNote:"مدة شهر واحد",
+threeMonths:"3 أشهر",threeMonthNote:"مدة ثلاثة أشهر",
+twelveMonths:"12 شهراً",twelveMonthNote:"مدة اثني عشر شهراً",
+popular:"خيار شائع",confirmFeatures:"تأكد من المزايا المشمولة قبل الشراء",
+deviceHelp:"إرشادات الأجهزة والإعداد",supportEnquiry:"الدعم عبر الاستفسار في واتساب",
+askAboutPlan:"استفسر عن هذه الباقة",
+currencyNote:"الأسعار بغير الجنيه الإسترليني تحويلات تقديرية باستخدام أسعار مرجعية مدمجة وليست أسعاراً مباشرة. تأكد من المبلغ النهائي قبل الدفع.",
+resellerTitle:"معلومات الموزعين",
+resellerDesc:"هل ترغب في العمل كموزع؟ تواصل معنا للتحقق من التفويض ومزود اللوحة والمحتوى المسموح به وشروط الخدمة والتكاليف المستمرة قبل الشراء.",
+starterPanel:"لوحة البداية · 50 رصيداً",proPanel:"اللوحة الاحترافية · 100 رصيد",
+oneTimeIndicative:"سعر معلن لمرة واحدة؛ يرجى تأكيد الشروط",
+verifyPanel:"تأكد من مزود اللوحة وتفاصيل الدخول",
+verifyRights:"تحقق من حقوق التوزيع والاستخدام المسموح",
+verifyCosts:"تأكد من انتهاء صلاحية الرصيد والتكاليف الإضافية",
+enquire:"استفسر",resellerOption:"خيار للموزعين",
+resellerNotice:"لا تُعد بيع القنوات أو الأفلام أو المسلسلات إلا إذا كنت تملك الحقوق المطلوبة والإذن الكتابي. تحقق من القوانين المحلية وشروط المزود قبل دفع أي مبلغ.",
+devicesTitle:"الأجهزة والإعداد",
+devicesDesc:"يعتمد التوافق على التطبيق والجهاز والخدمة المصرح بها. اطلب من الدعم تأكيد توافق جهازك قبل الطلب.",
+deviceTypesTitle:"أنواع الأجهزة الشائعة",
+deviceTypesText:"قد تدعم أجهزة التلفاز الذكية وأجهزة Android TV وAmazon Fire TV وأجهزة Apple وهواتف Android والأجهزة اللوحية والحواسيب تطبيقات بث متوافقة.",
+setupTitle:"المساعدة في الإعداد",
+setupText:"أخبرنا بطراز جهازك واسم التطبيق. لا ترسل بيانات البطاقة أو كلمات المرور أو رموز الأمان لمرة واحدة عبر المحادثة.",
+faqTitle:"الأسئلة الشائعة",faqDesc:"اطلع على المعلومات الأساسية قبل التواصل مع الدعم.",
+faq1q:"كيف أتأكد من تفاصيل الباقة؟",
+faq1a:"استخدم زر الاستفسار عن المدة المطلوبة. اطلب كتابةً تفاصيل المزايا والمحتوى والسعر الإجمالي وطريقة الدفع والتجديد وسياسة الاسترداد قبل الدفع.",
+faq2q:"ما الأجهزة المدعومة؟",
+faq2a:"يعتمد الدعم على الخدمة المصرح بها والتطبيق المتوافق. أرسل طراز التلفاز أو جهاز البث أو الهاتف للتحقق من التوافق.",
+faq3q:"كيف يعمل خيار الموزع؟",
+faq3a:"اطلب معلومات مكتوبة عن المزود والدخول إلى اللوحة وقواعد الرصيد والمحتوى المسموح والدعم والتكاليف الإضافية وإثبات تفويض التوزيع. لا تشترِ قبل فهم الشروط.",
+faq4q:"ما سياسة الاسترداد؟",
+faq4a:"اطلب شروط الاسترداد والإلغاء المكتوبة والحالية قبل الدفع. يجب أن تتوافق أي سياسة مع القوانين المنطبقة على البيع.",
+faq5q:"هل تحويل العملات مباشر؟",
+faq5a:"لا. الأسعار المحولة تقديرية باستخدام أسعار مرجعية مدمجة في الصفحة. يجب تأكيد السعر والعملة النهائيين قبل الدفع.",
+contactTitle:"تواصل مع STREAMMAX",
+contactDesc:"استفسر عن التوفر الحالي والمحتوى المصرح به وتوافق الأجهزة والشروط وطرق الدفع قبل الطلب.",
+footerLine:"© {year} STREAMMAX. جميع الحقوق محفوظة.",
+privacyLink:"إشعار الخصوصية",termsLink:"شروط الخدمة",
+refundLink:"الاسترداد والإلغاء",
+footerNote:"استبدل ملخصات السياسات العامة هذه بتفاصيل عملك الدقيقة وراجعها وفق القوانين المنطبقة عليك.",
+quickContact:"تواصل معنا",close:"إغلاق ✕",
+policyPlaceholder:"مهم: هذا نموذج أولي وليس استشارة قانونية. أضف هوية نشاطك الحقيقية وبيانات الاتصال وممارسات البيانات والشروط المتوافقة مع القانون قبل الاعتماد عليه."
+}
+};
+
+const policies = {
+privacy: {
+en:["Privacy notice","Explain what personal data you collect through WhatsApp, forms, analytics, cookies or payment providers; why you collect it; the lawful basis where applicable; who receives it; how long it is kept; how users can exercise their rights; and how to contact the responsible business. Do not claim you collect no data unless that is accurate."],
+ar:["إشعار الخصوصية","وضّح البيانات الشخصية التي تجمعها عبر واتساب أو النماذج أو التحليلات أو ملفات تعريف الارتباط أو مزودي الدفع، وسبب جمعها والجهات التي تستلمها ومدة الاحتفاظ بها وحقوق المستخدمين وطريقة التواصل مع النشاط المسؤول. لا تدّعِ أنك لا تجمع بيانات إلا إذا كان ذلك صحيحاً."]
+},
+terms: {
+en:["Terms of service","Add the legal business name and address, precise service description, eligibility and geographic restrictions, total prices and taxes, payment and renewal terms, support hours, acceptable use rules, intellectual-property and distribution permissions, complaint process, and applicable law. Only offer content you are authorised to distribute."],
+ar:["شروط الخدمة","أضف الاسم القانوني للنشاط وعنوانه ووصف الخدمة والقيود الجغرافية والأهلية والأسعار والضرائب وشروط الدفع والتجديد وساعات الدعم والاستخدام المقبول وحقوق الملكية الفكرية وتفويض التوزيع وآلية الشكاوى والقانون المنطبق. اعرض فقط المحتوى المصرح لك بتوزيعه."]
+},
+refund: {
+en:["Refund & cancellation","Publish a clear, accurate policy explaining when cancellations are accepted, how customers request a refund, processing times, exceptions and how consumer rights are respected. The policy must reflect your actual practices and comply with applicable law; do not promise refunds you cannot honour."],
+ar:["الاسترداد والإلغاء","انشر سياسة واضحة ودقيقة توضح متى يُقبل الإلغاء وكيف يطلب العميل الاسترداد ومدة المعالجة والاستثناءات وكيفية احترام حقوق المستهلك. يجب أن تعكس السياسة ممارساتك الفعلية وأن تتوافق مع القانون؛ لا تعد باسترداد لا يمكنك تنفيذه."]
+}
+};
+
+// These are reference rates, not live rates. Update before deployment.
+const rates = { GBP: 1, USD: 1.29, EUR: 1.18 };
+const symbols = { GBP: "£", USD: "$", EUR: "€" };
+
+const currencySelect = document.getElementById("currencySelect");
+const langSelect = document.getElementById("langSelect");
+const dropdown = document.getElementById("navDropdown");
+const menuButton = document.getElementById("menuButton");
+const modal = document.getElementById("policyModal");
+const policyTitle = document.getElementById("policyTitle");
+const policyBody = document.getElementById("policyBody");
+let lastFocused = null;
+
+function setCurrency() {
+  const currency = currencySelect.value;
+  document.querySelectorAll("[data-price-gbp]").forEach(el => {
+    const gbp = Number(el.dataset.priceGbp);
+    const converted = gbp * rates[currency];
+    el.textContent = symbols[currency] + converted.toLocaleString(
+      langSelect.value === "ar" ? "ar" : "en-GB",
+      { minimumFractionDigits: 2, maximumFractionDigits: 2 }
+    );
+  });
+}
+
+function setLanguage() {
+  const lang = langSelect.value;
+  const dict = translations[lang] || translations.en;
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.dataset.i18n;
+    if (Object.prototype.hasOwnProperty.call(dict, key)) {
+      if (key === "footerLine") {
+        el.textContent = dict[key].replace("{year}", new Date().getFullYear());
       } else {
-        htmlTag.setAttribute('dir', 'ltr');
+        el.textContent = dict[key];
       }
-
-      if (lang === 'ar') {
-        document.getElementById('heroTitle').innerHTML = 'بث عالي الدقة 4K.<br><span>أكثر من 18,000 قناة مباشرة</span>';
-        document.getElementById('heroDesc').textContent = 'استمتع بمتابعة المباريات، الأفلام، والمسلسلات على الشاشات الذكية، أجهزة الفايرستيك والهواتف بدون تقطيع.';
-      } else {
-        document.getElementById('heroTitle').innerHTML = 'Ultra HD 4K Streaming.<br><span>18,000+ Live Channels</span>';
-        document.getElementById('heroDesc').textContent = 'Enjoy non-stop sports, movies, series, and live TV on your Smart TV, Firestick, Apple TV, or mobile devices with zero freezing technology.';
-      }
-
-      document.querySelectorAll('[data-ar]').forEach(el => {
-        if (!el.id.includes('hero')) {
-          const text = el.getAttribute(`data-${lang}`);
-          if (text) {
-            el.innerHTML = text;
-          }
-        }
-      });
     }
-  </script>
+  });
 
+  document.title = lang === "ar"
+    ? "STREAMMAX | خيارات الاشتراك ومعلومات الموزعين"
+    : "STREAMMAX | Streaming Plans & Reseller Information";
+
+  document.querySelector('meta[name="description"]').setAttribute(
+    "content",
+    lang === "ar"
+      ? "تعرّف على خيارات الاشتراك والأجهزة المتوافقة والدعم لدى STREAMMAX. تواصل معنا لتأكيد التوفر والأسعار والشروط."
+      : "Explore STREAMMAX subscription options, supported devices, setup information and customer support."
+  );
+
+  setCurrency();
+}
+
+function closeDropdown() {
+  dropdown.classList.remove("open");
+  menuButton.setAttribute("aria-expanded", "false");
+}
+
+menuButton.addEventListener("click", () => {
+  const open = dropdown.classList.toggle("open");
+  menuButton.setAttribute("aria-expanded", String(open));
+});
+
+document.addEventListener("click", event => {
+  if (!dropdown.contains(event.target)) closeDropdown();
+});
+
+document.querySelectorAll("#navMenu a").forEach(a => {
+  a.addEventListener("click", closeDropdown);
+});
+
+currencySelect.addEventListener("change", setCurrency);
+langSelect.addEventListener("change", setLanguage);
+
+function openPolicy(type, button) {
+  const lang = langSelect.value;
+  const item = policies[type];
+  if (!item) return;
+
+  lastFocused = button;
+  policyTitle.textContent = item[lang][0];
+  policyBody.replaceChildren();
+
+  const p = document.createElement("p");
+  p.textContent = item[lang][1];
+  policyBody.appendChild(p);
+
+  modal.classList.add("open");
+  document.getElementById("closeModal").focus();
+}
+
+function closePolicy() {
+  modal.classList.remove("open");
+  if (lastFocused) lastFocused.focus();
+}
+
+document.querySelectorAll("[data-policy]").forEach(button => {
+  button.addEventListener("click", () => openPolicy(button.dataset.policy, button));
+});
+
+document.getElementById("closeModal").addEventListener("click", closePolicy);
+
+modal.addEventListener("click", event => {
+  if (event.target === modal) closePolicy();
+});
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") {
+    closePolicy();
+    closeDropdown();
+  }
+});
+
+setLanguage();
+})();
+</script>
 </body>
 </html>
